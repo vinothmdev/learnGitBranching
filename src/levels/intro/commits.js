@@ -6,9 +6,9 @@ exports.level = {
     "es_MX": "Introducción a los commits de Git",
     "es_ES": "Introducción a los commits de Git",
     "pt_BR": "Introdução aos commits no Git",
-    "gl"   : "Introducción ós commits de Git",
+    "gl": "Introducción ós commits de Git",
     "fr_FR": "Introduction aux commits avec Git",
-    "ja"   : "Gitのコミット",
+    "ja": "Gitのコミット",
     'ko': 'Git 커밋 소개',
     'zh_CN': 'Git Commit',
     'zh_TW': '介紹 git commit ',
@@ -16,11 +16,14 @@ exports.level = {
     'uk': 'Знайомство з комітами в Git',
     'vi': 'Giới thiệu về Git Commit',
     'sl_SI': "Uvod v Git Commit",
-    'pl'   : "Wprowadzenie do zatwierdzeń GIT-a (commit)"
+    'pl': "Wprowadzenie do commitów Gita",
+    'it_IT': "Introduzione ai commit in Git",
+    "ta_IN": "கிட் கமிட்கள் ஒரு அறிமுகம்",
+    "tr_TR": "Git Commit'e Giriş"
   },
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C3\",\"id\":\"master\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C3\",\"id\":\"main\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C2\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}",
   "solutionCommand": "git commit;git commit",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}",
   "hint": {
     "en_US": "Just type in 'git commit' twice to finish!",
     "de_DE": "Gib einfach zweimal 'git commit' ein um den Level abzuschließen",
@@ -28,17 +31,20 @@ exports.level = {
     "es_MX": "¡Simplemente escribe 'git commit' dos veces para terminar!",
     "es_ES": "¡Simplemente escribe 'git commit' dos veces para terminar!",
     "pt_BR": "Simplesmente digite 'git commit' duas vezes para concluir!",
-    "gl"   : "Simplemente escribe 'git commit' dúas veces para terminar.",
+    "gl": "Simplemente escribe 'git commit' dúas veces para terminar.",
     "fr_FR": "Il suffit de saisir 'git commit' deux fois pour réussir !",
     "zh_CN": "执行两次 'git commit' 就可以过关了！",
     "zh_TW": "輸入兩次 'git commit' 就可以完成！",
-    "ja"   : "'git commit'コマンドを2回打てば完成!",
+    "ja": "'git commit'コマンドを2回打てば完成!",
     "ko": "'git commit'이라고 두 번 치세요!",
     "ru_RU": "Попробуй дважды выполнить команду 'git commit' ;)",
     "uk": "Спробуй двічі виконати команду 'git commit' ;)",
     'vi': "Đơn giản là cứ gõ 'git commit' 2 lần",
     'sl_SI': "Preprosto dvakrat vpiši 'git commit' in zaključi!",
-    "pl"   : "Aby zakończyć, wystarczy dwukrotnie wpisać 'git commit'!"
+    "pl": "Aby zakończyć, wystarczy dwukrotnie wpisać 'git commit'!",
+    'it_IT': "Digita 'git commit' due volte per finire!",
+    "ta_IN": "இந்த நிலையை நிரைவு செய்ய 'git commit' என்று இரண்டு முறை தட்டச்சு செய்க!",
+    "tr_TR": "Bölümü bitirmek için sadece iki kere 'git commit' yazmanız yeterlidir."
   },
   "disabledMap": {
     "git revert": true
@@ -92,7 +98,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-            "## Git Commits",
+              "## Git Commits",
               "Ein Commit in einem Git-Repository speichert eine Abbildung aller Dateien in deinem Projektverzeichnis. Es ist wie ein riesiges Kopieren und Einfügen, nur besser.",
               "",
               "Allerdings will Git die Commits so schlank wie möglich halten, also kopiert es nicht einfach stur das ganze Verzeichnis jedes Mal wenn du committest. Es kann (wenn möglich) Commits als Menge von Änderungen zusammenpacken, von einer Version des Repositorys zur nächsten.",
@@ -391,9 +397,9 @@ exports.level = {
           "options": {
             "markdowns": [
               "## Commits Git",
-              "Un commit dans un dépôt (repository) git enregistre une image (snapshot) de tous les fichiers du repertoire. Comme un Copier-Coller géant, mais en bien mieux !",
+              "Un commit dans un dépôt Git (repository) enregistre une image (snapshot) de tous les fichiers du répertoire. Comme un Copier-Coller géant, mais en bien mieux !",
               "",
-              "Git fait en sorte que les commits soient aussi légers que possible donc il ne recopie pas tout le répertoire à chaque commit. En fait, git n'enregistre que l'ensemble des changements (\"delta\") depuis la version précédente du dépôt. C'est pour cette raison que la plupart des commits ont un commit parent -- ainsi que nous le verrons plus tard.",
+              "Git fait en sorte que les commits soient aussi légers que possible donc il ne recopie pas tout le répertoire à chaque commit. En fait, Git n'enregistre que l'ensemble des changements (\"delta\") depuis la version précédente du dépôt. C'est pour cette raison que la plupart des commits ont un commit parent -- ainsi que nous le verrons plus tard.",
               "",
               "Pour cloner un dépôt, il faut décompresser (\"résoudre\") tous ces deltas. C'est la raison pour laquelle la commande écrit :",
               "",
@@ -409,7 +415,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Voyons à quoi cela ressemble en pratique. Sur la droite, on peut visualiser un (petit) dépôt git. Il y a pour l'instant deux commits -- le premier commit initial, `C0`, et un commit suivant `C1` qui aurait des changements significatifs.",
+              "Voyons à quoi cela ressemble en pratique. Sur la droite, on peut visualiser un (petit) dépôt Git. Il y a pour l'instant deux commits -- le premier commit initial, `C0`, et un commit suivant `C1` qui aurait des changements significatifs.",
               "",
               "Appuyez sur le bouton ci-dessous pour faire un nouveau commit."
             ],
@@ -485,7 +491,7 @@ exports.level = {
               "",
               "Git 希望提交记录尽可能地轻量，因此在你每次进行提交时，它并不会盲目地复制整个目录。条件允许的情况下，它会将当前版本与仓库中的上一个版本进行对比，并把所有的差异打包到一起作为一个提交记录。",
               "",
-              "Git 还保存了提交的历史记录。这也是为什么大多数提交记录的上面都有父节点的原因 —— 我们会在图示中用箭头来表示这种关系。对于项目组的成员来说，维护提交历史对大家都有好处。",
+              "Git 还保存了提交的历史记录。这也是为什么大多数提交记录的上面都有 parent 节点的原因 —— 我们会在图示中用箭头来表示这种关系。对于项目组的成员来说，维护提交历史对大家都有好处。",
               "",
               "关于提交记录太深入的东西咱们就不再继续探讨了，现在你可以把提交记录看作是项目的快照。提交记录非常轻量，可以快速地在这些提交记录之间切换！"
             ]
@@ -500,7 +506,7 @@ exports.level = {
               "点击下面的按钮创建一个新的提交记录。"
             ],
             "afterMarkdowns": [
-              "好了！非常棒！我们刚才修改了代码库，并把这些修改保存成了一个提交记录 `C2`。`C2` 的父节点是 `C1`，父节点是当前提交中变更的基础。"
+              "好了！非常棒！我们刚才修改了代码库，并把这些修改保存成了一个提交记录 `C2`。`C2` 的 parent 节点是 `C1`， parent 节点是当前提交中变更的基础。"
             ],
             "command": "git commit",
             "beforeCommand": ""
@@ -649,13 +655,13 @@ exports.level = {
           "options": {
             "markdowns": [
               "## Git Commits",
-              "Một commit trong một git repository(kho chứa) lưu trữ một ảnh chụp của tất cả các file trong thư mục của bạn. Như kiểu copy và paste cõ bự, thậm chí còn tốt hơn thế!",
+              "Một commit trong một Git repository (kho chứa) lưu trữ một ảnh chụp của tất cả các file trong thư mục của bạn. Như kiểu copy và paste cỡ bự, thậm chí còn tốt hơn thế!",
               "",
-              "Thế nhưng Git muốn giữ cho các commit nhẹ hết mức có thể, cho nên git không copy tất cả thư mục một cách mù quáng mỗi khi bạn commit. Nó có thể(khi khả dĩ) nén commit như một tập hợp các thay đổi, hay là một \"bản so sánh\", giũa một phiên bản kho chứa git với phiên bản tiếp theo.",
+              "Thế nhưng Git muốn giữ cho các commit nhẹ hết mức có thể, cho nên Git không copy tất cả thư mục một cách mù quáng mỗi khi bạn commit. Nó có thể (khi khả dĩ) nén commit như một tập hợp các thay đổi, hay là một \"bản so sánh\", giữa một phiên bản kho chứa Git với phiên bản tiếp theo.",
               "",
               "Đồng thời Git cũng lưu trữ lịch sử commit nào được tạo ra lúc nào. Đó là tại sao hầu hết các commit có commit tổ tiên phía trên nó -- chúng tôi đã hình tượng hóa mối quan hệ này bằng các mũi tên. Trong cộng tác nhóm thì việc gìn giữ lịch sử là rất có ích!",
               "",
-              "Có vẻ là hơi nhiều lý thuyết rồi, bây giờ bạn chỉ cần hiều các commit là các lát cắt của dự án. Các commit rất nhẹ nên việc chuyển qua lại giữa chúng thì nhanh vô cùng!"
+              "Có vẻ là hơi nhiều lý thuyết rồi, bây giờ bạn chỉ cần hiểu các commit là các lát cắt của dự án. Các commit rất nhẹ nên việc chuyển qua lại giữa chúng thì nhanh vô cùng!"
             ]
           }
         },
@@ -663,12 +669,12 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Thử thực hành chút nào. Ở bên phải chúng ta có mô tả một kho git (nhỏ). Hiện tại đang có 2 commit, một là commit khởi nguyên `C0`, và một commit sau đó `C1` có thể đã có một vài thay đổi.",
+              "Thử thực hành chút nào. Ở bên phải chúng ta có mô tả một kho Git (nhỏ). Hiện tại đang có 2 commit, một là commit khởi nguyên `C0`, và một commit sau đó `C1` có thể đã có một vài thay đổi.",
               "",
-              "Bấm nút bên dưới để tạo một commit mới"
+              "Bấm nút bên dưới để tạo một commit mới."
             ],
             "afterMarkdowns": [
-              "Đúng rồi! Tuyệt vời. Bạn vừa tạo thay đổi cho kho chứa và lưu vào commit. Cái commit bạn vừa tạo nó có cha, là `C1` đấy, là commit mà nó được tạo ra từ đó."
+              "Đúng rồi! Tuyệt vời. Bạn vừa tạo thay đổi cho kho chứa và lưu vào commit. Cái commit bạn vừa tạo nó có cha, là `C1` đấy, có thể hiểu commit vừa được tạo dựa trên commit cũ hơn là C1."
             ],
             "command": "git commit",
             "beforeCommand": ""
@@ -678,7 +684,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Nào bây giờ thì thử tự làm bài tập nào! Sau khi đóng cửa sổ này, tạo ra 2 commit để hoàn thành cấp độ"
+              "Nào bây giờ thì thử tự làm bài tập nào! Sau khi đóng cửa sổ này, tạo ra 2 commit để hoàn thành cấp độ."
             ]
           }
         }
@@ -732,14 +738,14 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "## Zatwierdzenia GIT-a (commit)",
-              "`commit` w repozytorium GIT-a rejestruje migawkę wszystkich (śledzonych) plików w twoim katalogu. To jak gigantyczne kopiowanie i wklejanie, ale jeszcze lepsze!",
+              "## Commity Gita",
+              "`commit` w repozytorium Gita rejestruje migawkę wszystkich (śledzonych) plików w twoim katalogu. To jak gigantyczne kopiowanie i wklejanie, ale jeszcze lepsze!",
               "",
-              "GIT stara się, aby commit-y były tak lekkie, jak to tylko możliwe, więc nie kopiuje na ślepo całego katalogu za każdym razem, gdy zatwierdzasz zmiany. Możesz (jeśli to możliwe) skompresować zatwierdzenie jako zestaw zmian (lub _\"delta\"_) między jedną wersją w repozytorium a następną.",
+              "Git stara się, aby commity były tak lekkie, jak to tylko możliwe, więc nie kopiuje na ślepo całego katalogu za każdym razem, gdy zatwierdzasz zmiany. Możesz (jeśli to możliwe) skompresować commita jako zestaw zmian (lub _\"delta\"_) między jedną wersją w repozytorium a następną.",
               "",
-              "GIT przechowuje również historię, kiedy dokonano zatwierdzenia. Dlatego większość commit-ów ma na sobie zmiany przodków -- oznaczamy to strzałkami w naszej wizualizacji. Utrzymanie historii jest świetne dla wszystkich, którzy pracują nad projektem!",
+              "Git przechowuje również całą historię, kiedy dokonano każdego zatwierdzenia. Dlatego większość commitów ma na sobie zmiany przodków -- oznaczamy to strzałkami w naszej wizualizacji. Zachowanie historii to świetna funkcja dla wszystkich, którzy pracują nad projektem!",
               "",
-              "Jest mnóstwo rzeczy do zagłębienia, ale na razie możesz myśleć o commit-ach jako migawkach projektu. Zatwierdzenia są bardzo lekkie, a przełączanie się między nimi jest niesamowicie szybkie!"
+              "To sporo do zapamiętania, ale na razie możesz myśleć o commitach jako \"rewizjach\" albo migawkach projektu. Są bardzo lekkie, a przełączanie się między nimi jest niesamowicie szybkie!"
             ]
           }
         },
@@ -747,12 +753,12 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Zobaczmy, jak to wygląda w praktyce. Po prawej stronie mamy wizualizację (małego) repozytorium GIT-a. Istnieją dwa zatwierdzenia:\n początkowy commit `C0`, a następnie po nim commit `C1`, które mogą mieć kilka interesujących zmian.",
+              "Zobaczmy, jak to wygląda w praktyce. Po prawej stronie mamy wizualizację (małego) repozytorium Gita. Istnieją dwa zatwierdzenia:\n początkowy commit `C0`, a następnie po nim commit `C1`, który może mieć kilka interesujących zmian.",
               "",
-              "Kliknij poniższy przycisk, aby dokonać nowy commit."
+              "Kliknij przycisk poniżej, aby dodać nowego commita."
             ],
             "afterMarkdowns": [
-              "Gotowe! Niesamowite. Właśnie wprowadziliśmy zmiany w repozytorium i zapisaliśmy je jako zatwierdzenie (commit). Utworzony przez nas commit ma rodzica `C1`, który odnosi się do commit-a, na który został oparty."
+              "Gotowe! Niesamowite. Właśnie wprowadziliśmy zmiany w repozytorium i zapisaliśmy je jako commita. Commit, który właśnie wykonaliśmy, ma rodzica `C1`, który odnosi się do commitu, na którym się opierał."
             ],
             "command": "git commit",
             "beforeCommand": ""
@@ -762,11 +768,137 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Śmiało i wypróbuj to sam! Po zamknięciu tego okna wykonaj dwa zatwierdzenia (tj. commit-y), aby ukończyć poziom."
+              "Śmiało, wypróbuj to! Po zamknięciu tego okna wykonaj dwa commity, aby ukończyć poziom."
             ]
           }
         }
       ]
-    }
-  }
+    },
+    "ta_IN": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## கிட் கமிட்கள்",
+              "கிட் கமிட் உங்கள் கோப்பகத்தில் உள்ள கண்காணிக்கப்பட்ட (tracked) கோப்புகளை கிட் களஞ்சியத்தில் ஒரு நகலாக பதிவு செய்கின்றது. ஆனால் இது முழு நகல் எடுத்து ஒட்டுவதை விட சிறந்தது!",
+              "",
+              "கிட் கமிட்களை முடிந்தவரை இலகுவாக இருக்கும்படி செய்கின்றது, எனவே நீங்கள் ஒவ்வொரு முறை கமிட் செய்யும் போதும் கிட் கோப்பகங்களை கண்மூடித்தனமாக நகலெடுக்காது. அது (முடிந்தால்) கமிட்களை சுருக்கப்பட்ட மாற்றங்களின் தொகுப்பாகவோ, அல்லது களஞ்சியத்தில் ஏற்க்கனவே உள்ள பதிப்பின் \"வேறுபாட்டை\" மட்டும் கண்க்கிட்டோ சேமிக்க செயிகிறது.",
+              "",
+              "மேலும் கிட் கமிட்கள் எப்போது செய்யப்படுகிறது என்பதன் வரலாற்றையும் பராமரிக்கிறது. அதனால் தான் பெரும்பான்மையான கமிட்கள் முன்பு பதிவிட்ட கமிட்களை பின் தொடருகின்றன -- நமது வரைபடங்கள் அதனை அம்பு குறியீடுகளாக காட்டு கின்றன. வரலாற்றைப் பராமரிப்பது கணினிதிட்டத்தில் பணிபுரியும் அனைவருக்கும் உதவியாக இருக்கும்!",
+              "",
+              "புரிந்து கொள்ள நிறைய இருக்கிறது, ஆனால் இப்போதைக்கு நீங்கள் கமிட்களை திட்டத்தின் பிரதியாக நினைக்கலாம். கமிட்டுகள் மிகவும் இலகுவானவை மேலும் அவற்றுக்கிடையே மாறுவது மிகவும் எளிமையானது!"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "இது நடைமுறையில் எப்படி இருக்கும் என்று பார்ப்போம். இங்கு வலதுபுறத்தில் ஒரு (சிறிய) கிட் களஞ்சியத்தின் காட்சிப்படுத்தல் உள்ளது. இப்போது அதில் இரண்டு கமிட்கள் உள்ளன -- முதல் கமிட், `C0`, மற்றும் மேலும் இரண்டாவதாக `C1` அதில் சில பயண்னுள்ள மாற்றங்கள் இருக்கலாம்.",
+              "",
+              "புதிய கமிட் செய்ய கீழே உள்ள பொத்தானை அழுத்தவும்."
+            ],
+            "afterMarkdowns": [
+              "அவ்வலவுதான்! அருமை. நாம் களஞ்சியத்தில் மாற்றங்களைச் செய்து கமிட்டாக சேமித்துள்ளோம். இப்போது செய்த கமிட்டிர்க்கு `C1` மூலமாக உள்ளது, அது அதனுடைய மூலத்தை தொடர்ந்து உள்ளது."
+            ],
+            "command": "git commit",
+            "beforeCommand": ""
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "இப்போது இந்த திரை மூடிய பிறகு நீங்கள் முயற்சி செய்யுங்கள்!, இந்த நிலையை நிரைவு செய்ய இரண்டு கமிட்டுகள் செய்யுங்கள்."
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Git Commits",
+              "Un commit in git memorizza un'instantanea di tutti i file (tracciati) della cartella di lavoro. È come un enorme copia-incolla, ma migliore!",
+              "",
+              'Git conserva i commit nel modo più leggero possibile, perciò non copia ciecamente l\'intera cartella per ogni commit. Può (ove possibile) comprimere un commit come un insieme di cambiamenti, o "delta", da una versione alla successiva del repository.',
+              "",
+              "Git memorizza anche la storia di tutti i commit effettuati. Questo è il motivo per cui molti commit hanno genitori sopra di essi -- questo viene rappresentato con delle frecce nelle nostre spiegazioni. Conoscere la storia è utilissimo per tutti quelli che collaborano ad un progetto!",
+              "",
+              "C'è tanto da sapere, ma per ora pensa ai commit come a delle instantanee del progetto. I commit sono leggerissimi e si può passare da uno all'altro in un battibaleno!",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Vediamolo in pratica. Sulla destra abbiamo l'immagine di un (piccolo) repository git. Ci sono due commit -- il primo commit, `C0`, e un altro dopo, `C1`, che potrebbe avere modifiche importanti.",
+              "",
+              "Premi il pulsante qua sotto per eseguire un nuovo commit.",
+            ],
+            afterMarkdowns: [
+              "Ecco qua! Fantastico. Abbiamo modificato il repository e salvato con un commit. Il commit che abbiamo creato ha un genitore, `C1`, che ci indica su chi è basato il nostro commit.",
+            ],
+            command: "git commit",
+            beforeCommand: "",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Vai avanti e prova da solo! Dopo che questa finestra si chiude, crea due commit per completare il livello.",
+            ],
+          },
+        },
+      ],
+    },
+    "tr_TR": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Git Commit'leri",
+              "Git commit'leri, projenizin tüm (izlenen) dosyalarının anlık bir fotoğrafını çeker. Düşünün ki bu, büyük bir kopyala-yapıştır işlemi gibi, ama işte burada daha eğlenceli bir olay var!",
+              "",
+              "Git, commit'leri hafif tutmak ister, bu yüzden her seferinde sırf her şeyi körü körüne kopyalamaz. Mümkün olduğunda, bir commit'i değişikliklerin seti olarak sıkıştırabilir veya bir sürümün bir sonraki sürüme olan farkını, yani bir \"delta\"yı yakalayabilir.",
+              "",
+              "Git aynı zamanda hangi commit'lerin ne zaman yapıldığını da kayıt altında tutar. İşte bu yüzden çoğu commit, üstünde atası olan başka commit'lerle gelir - bu görselde oklarla belirtilir. Tarih tutmak, projede çalışan herkes için harika bir şeydir!",
+              "",
+              "İlk bakışta karmaşık gelebilir, ama şimdilik commit'leri projenizin anlık fotoğrafları gibi düşünün. Commit'ler hafiftir ve aralarında çok hızlı geçiş yapılabilir!"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Bakalım bu pratikte nasıl görünüyor. Sağ tarafta, (küçük) bir git deposunun görselleştirmesini görüyorsunuz. Şu anda iki commit var - ilk başlangıç commit'i, `C0`, ve ondan sonra gelen anlamlı değişiklikler içerebilecek bir commit olan `C1`.",
+              "",
+              "Yeni bir commit için aşağıdaki düğmeye tıklayın."
+            ],
+            "afterMarkdowns": [
+              "İşte bu! Harika. Depoya değişiklikler yaptık ve onları bir commit olarak kaydettik. Yeni yaptığımız commit'in bir atası var, `C1`, bu da commit\'imizin ne üzerine inşa edildiğini gösteren bir referans içerir."
+            ],
+            "command": "git commit",
+            "beforeCommand": ""
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Şimdi sıra sende! Bu pencere kapanır kapanmaz, seviyeyi tamamlamak için iki commit yap."
+            ]
+          }
+        }
+      ]
+    },
+  },
 };

@@ -62,6 +62,31 @@ div.modalTerminal p {
   text-align: center;
 }
 
+.visuallyHidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.noStyle {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  text-indent: inherit;
+  text-shadow: inherit;
+  appearance: none;
+}
+
 /* Box Model */
 html,
 body,
@@ -232,7 +257,7 @@ div.canvasTerminalHolder {
   height: 0;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 10px;
   z-index: 3;
 }
 
@@ -300,14 +325,24 @@ div.canvasTerminalHolder > div.terminal-window-holder div.inside {
   border-radius: 0 0 5px 5px;
 }
 
+div.inside  pre {
+  white-space: normal;
+  line-height: 24px;
+}
+
 #controls {
   max-width: 400px;
 }
 
 div.canvasTerminalHolder > div.terminal-window-holder {
-  max-width: 500px;
-  min-width: 500px;
+  max-width: 400px;
+  min-width: 400px;
   overflow: visible !important;
+}
+
+
+div.canvasTerminalHolder > div.terminal-window-holder div.inside svg {
+  top: unset !important;
 }
 
 /* Toolbar */
@@ -917,7 +952,7 @@ div.seriesView p.levelInfo {
   font-style: italic;
 }
 
-div.levelIcon {
+a.levelIcon {
   height: 40px;
   width: 40px;
   border-radius: 5px;
@@ -929,9 +964,10 @@ div.levelIcon {
   background-image: -ms-linear-gradient(top, white, #AAB1AA);
   background-image: linear-gradient(top, white, #AAB1AA);
   cursor: pointer;
+  text-decoration: none;
 }
 
-div.levelIcon:hover {
+a.levelIcon:hover {
   background-image: -webkit-linear-gradient(top, #DADADA, #888686);
   background-image: -moz-linear-gradient(top, #DADADA, #888686);
   background-image: -o-linear-gradient(top, #DADADA, #888686);
@@ -939,7 +975,7 @@ div.levelIcon:hover {
   background-image: linear-gradient(top, #DADADA, #888686);
 }
 
-div.levelIcon:active {
+a.levelIcon:active {
   background-image: -webkit-linear-gradient(top, #888686, #7A7A7A);
   background-image: -moz-linear-gradient(top, #888686, #7A7A7A);
   background-image: -o-linear-gradient(top, #888686, #7A7A7A);
@@ -947,11 +983,11 @@ div.levelIcon:active {
   background-image: linear-gradient(top, #888686, #7A7A7A);
 }
 
-div.levelIcon.selected {
+a.levelIcon.selected {
   box-shadow: 0 0 15px #25F6FF;
 }
 
-div.levelIcon.solved {
+a.levelIcon.solved {
   background: -webkit-linear-gradient(top, #F3F86B, #35A30F);
   background: -moz-linear-gradient(top, #F3F86B, #35A30F);
   background: -o-linear-gradient(top, #F3F86B, #35A30F);
@@ -960,17 +996,17 @@ div.levelIcon.solved {
   border-top: 1px solid #f4ffa1;
 }
 
-div.levelIcon.solved:hover {
+a.levelIcon.solved:hover {
   border-top-color: #30f03d;
   background: #30f03d;
 }
 
-div.levelIcon.solved:active {
+a.levelIcon.solved:active {
   border-top-color: #5edb15;
   background: #5edb15;
 }
 
-div.levelIcon div.index {
+a.levelIcon div.index {
   font-weight: 400;
   text-shadow: 1px 1px 2px #CCC, 0 2px 0 #C9C9C9;
   font-size: 1.125em;
@@ -978,11 +1014,11 @@ div.levelIcon div.index {
   -webkit-text-stroke: 1px #111;
 }
 
-div.levelIcon div.index i {
+a.levelIcon div.index i {
   display: none;
 }
 
-div.levelIcon.solved div.index i {
+a.levelIcon.solved div.index i {
   display: block;
   color: white;
   -webkit-text-stroke: 0;
@@ -990,7 +1026,7 @@ div.levelIcon.solved div.index i {
   font-size: 2em;
 }
 
-div.levelIcon.solved div.index div.indexNum {
+a.levelIcon.solved div.index div.indexNum {
   display: none;
 }
 
@@ -1110,6 +1146,10 @@ div.gitDemonstrationView {
   opacity: 0;
 }
 
+.gitDemonstrationView  p.uiButton[target="reset"] {
+  display: none;
+}
+
 .gitDemonstrationView.demonstrated div.afterText {
   opacity: 1;
 }
@@ -1119,7 +1159,12 @@ div.gitDemonstrationView {
 }
 
 .gitDemonstrationView.demonstrated p.uiButton {
-  opacity: 0.4;
+  display: none;
+}
+
+.gitDemonstrationView.demonstrated p.uiButton[target="reset"] {
+  display: block;
+  opacity: 0.5;
 }
 
 /* LeftRightView */
@@ -1281,4 +1326,13 @@ div.gitDemonstrationView {
 .uiButtonWhite:active {
   border-top-color: #9bcbeb;
   background: #9bcbeb;
+}
+
+
+
+#shadow{
+  position: absolute;
+  bottom: 0px;
+  left: 21px;
+  opacity: 0.4;
 }

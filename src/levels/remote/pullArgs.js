@@ -1,40 +1,46 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C6\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\"},\"o/master\":{\"target\":\"C1\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null},\"o/bar\":{\"target\":\"C1\",\"id\":\"o/bar\",\"remoteTrackingBranchID\":null},\"foo\":{\"target\":\"C3\",\"id\":\"foo\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C2\",\"id\":\"side\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C5\":{\"parents\":[\"C3\",\"C4\"],\"id\":\"C5\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C6\":{\"parents\":[\"C2\",\"C5\"],\"id\":\"C6\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"bar\":{\"target\":\"C3\",\"id\":\"bar\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"bar\",\"id\":\"HEAD\"}}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C6\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\"},\"o/main\":{\"target\":\"C1\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null},\"o/bar\":{\"target\":\"C1\",\"id\":\"o/bar\",\"remoteTrackingBranchID\":null},\"foo\":{\"target\":\"C3\",\"id\":\"foo\",\"remoteTrackingBranchID\":null},\"side\":{\"target\":\"C2\",\"id\":\"side\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C5\":{\"parents\":[\"C3\",\"C4\"],\"id\":\"C5\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C6\":{\"parents\":[\"C2\",\"C5\"],\"id\":\"C6\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"bar\":{\"target\":\"C3\",\"id\":\"bar\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"bar\",\"id\":\"HEAD\"}}}",
   "solutionCommand": "git pull origin bar:foo;git pull origin main:side",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C4\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\"},\"o/master\":{\"target\":\"C1\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null},\"o/bar\":{\"target\":\"C1\",\"id\":\"o/bar\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"bar\":{\"target\":\"C3\",\"id\":\"bar\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"bar\",\"id\":\"HEAD\"}}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C4\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\"},\"o/main\":{\"target\":\"C1\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null},\"o/bar\":{\"target\":\"C1\",\"id\":\"o/bar\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C4\":{\"parents\":[\"C1\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"bar\":{\"target\":\"C3\",\"id\":\"bar\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"}},\"HEAD\":{\"target\":\"bar\",\"id\":\"HEAD\"}}}",
   "name": {
     "en_US": "Pull arguments",
     "zh_CN": "Git pull 的参数",
     "zh_TW": "pull 的參數",
     "es_AR": "Parámetros de pull",
+    "es_MX": "Parámetros de pull",
     "es_ES": "Parámetros de pull",
     "pt_BR": "Parâmetros do pull",
-    "gl"   : "Parámetros de pull",
+    "gl": "Parámetros de pull",
     "de_DE": "Optionen für Pull",
-    "ja"   : "Pullの引数",
+    "ja": "Pullの引数",
     "fr_FR": "Arguments de pull",
     "ru_RU": "Аргументы для pull",
-    "ko"   : "pull 인자들",
-    "uk"   : "Аргументи pull",
-    "vi"   : "Tham số pull",
-    "sl_SI": "Pull argumenti"
+    "ko": "pull 인자들",
+    "uk": "Аргументи pull",
+    "vi": "Tham số pull",
+    "sl_SI": "Pull argumenti",
+    "pl": "Argumenty pull",
+    "it_IT": "Parametri di git pull"
   },
   "hint": {
     "en_US": "Remember that you can create new local branches with fetch/pull arguments",
     "zh_CN": "记住, 你可以通过 fetch/pull 创建本地分支",
     "zh_TW": "記住，你可以透過 fetch 以及 pull 來建立一個新的 local 的 branch",
     "es_AR": "Acordate de que podés crear nuevas ramas locales usando los parámetros de fetch/pull",
+    "es_MX": "Recuerda que puedes crear nuevas ramas locales usando los parámetros de fetch/pull",
     "es_ES": "Recuerda que puedes crear nuevas ramas locales usando los parámetros de fetch/pull",
     "pt_BR": "Lembre-se que você pode criar novos ramos locais com parâmetros de fetch/pull",
-    "gl"   : "Lémbrate que podes crear novas ramas locais con parámetros de fetch/pull",
+    "gl": "Lémbrate que podes crear novas ramas locais con parámetros de fetch/pull",
     "de_DE": "Du kannst neue lokale Branches mittels fetch / pull erstellen",
-    "ja"   : "Fetchとpullの引数を利用してローカルで新規ブランチを作成できるのをお忘れなく",
+    "ja": "Fetchとpullの引数を利用してローカルで新規ブランチを作成できるのをお忘れなく",
     "fr_FR": "Vous pouvez aussi créer une nouvelle branche locale avec les arguments de fetch/pull",
     "ru_RU": "Напоминаю, что новые ветки можно создавать и с помощью команд fetch/pull",
-    "ko"   : "fetch/pull 과 인자들로 새 로컬 브랜치를 생성할수 있다는것을 기억하세요.",
-    "uk"   : "Пам'ятай, що ти можеш створювати нові гілки, використовуючи fetch/pull з аргументами",
-    "vi"   : "Nhớ rằng,bạn có thể tạo nhánh cục bộ mới với tham số của fetch/pull",
-    "sl_SI": "Zapomni si, da lahko ustvariš nove lokalne branche s fetch/pull argumenti."
+    "ko": "fetch/pull 과 인자들로 새 로컬 브랜치를 생성할수 있다는것을 기억하세요.",
+    "uk": "Пам'ятай, що ти можеш створювати нові гілки, використовуючи fetch/pull з аргументами",
+    "vi": "Nhớ rằng, bạn có thể tạo nhánh cục bộ mới với tham số của fetch/pull",
+    "sl_SI": "Zapomni si, da lahko ustvariš nove lokalne branche s fetch/pull argumenti.",
+    "pl": "Pamiętaj, że za pomocą argumentów fetch/pull możesz tworzyć nowe lokalne gałęzie",
+    "it_IT": "Ricorda che puoi creare nuovi rami locali sfruttando fetch/pull + parametri"
   },
   "startDialog": {
     "en_US": {
@@ -131,7 +137,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Voici quelques commandes équivalentes dans git :",
+              "Voici quelques commandes équivalentes dans Git :",
               "",
               "`git pull origin foo` est équivalent à :",
               "",
@@ -254,6 +260,80 @@ exports.level = {
           "options": {
             "markdowns": [
               "OK: para terminar, alcanzá el estado del objetivo. Vas a necesitar descargar algunos commits, crear algunas ramas nuevas, y mergear esas ramas junto con otras, pero no debería llevar demasiados comandos :P"
+            ]
+          }
+        }
+      ]
+    },
+    "es_MX": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Parámetros de git pull",
+              "",
+              "Ahora que sabes prácticamente *todo* lo que hay que saber sobre los parámetros de `git fetch` y `git push`, casi no queda nada por revisar del comando git pull :)",
+              "",
+              "Eso es porque, al final, git pull es simplemente un atajo para hacer un fetch seguido de un merge. Puedes imaginártelo como ejecutar git fetch con los *mismos* parámetros, y después hacer merge hacia donde esos commits hayan quedado.",
+              "",
+              "Esto aplica incluso cuando utilizas parámetros absurdamente complicados. Veamos algunos ejemplos:"
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Estos son algunos comandos equivalentes de git:",
+              "",
+              "`git pull origin foo` equivale a:",
+              "",
+              "`git fetch origin foo; git merge o/foo`",
+              "",
+              "Y...",
+              "",
+              "`git pull origin bar~1:bugFix` equivale a:",
+              "",
+              "`git fetch origin bar~1:bugFix; git merge bugFix`",
+              "",
+              "¿Ves? git pull es simplemente un atajo para un fetch + merge, y todo lo que le importa a git pull es dónde terminaron esos commits (el parámetro `destino` que determina durante el fetch).",
+              "",
+              "Veamos una demostración:"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Si especificamos el lugar desde donde hacer fetch, todo ocurre como antes, pero hacemos merge con lo que se obtuvo de fetch."
+            ],
+            "afterMarkdowns": [
+              "¡Ves! Especificando `main` descargamos los commits a `o/main` como siempre. Después hacemos merge de `o/main` a nuestra rama actual, la cual *no* es la rama local `main`. Por este motivo puede hacer sentido ejecutar git pull múltiples ocasiones (con los mismos argumentos) desde diferentes ubicaciones con el fin de actualizar múltiples ramas."
+            ],
+            "command": "git pull origin main",
+            "beforeCommand": "git clone; go -b bar; git commit; git fakeTeamwork"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "¿Esto también funciona especificando origen y destino? ¡Puedes apostarlo! Veámoslo:"
+            ],
+            "afterMarkdowns": [
+              "Increible, eso es MUCHISIMO en un único comando. Creamos una nueva rama local llamada `foo`, descargamos los commits del main remoto a la rama `foo`, y después hicimos merge esa rama a nuestra rama actual `bar`. ¡¡¡Su poder es de más de 8000!!!"
+            ],
+            "command": "git pull origin main:foo",
+            "beforeCommand": "git clone; git fakeTeamwork; go -b bar; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "OK, para terminar, intenta alcanzar el estado del objetivo. Vas a necesitar descargar algunos commits, crear algunas ramas nuevas, y hacer merge de esas ramas junto con otras, pero no debería llevarte demasiados comandos :P"
             ]
           }
         }
@@ -539,7 +619,7 @@ exports.level = {
               "他是不是也可以同時指定 source 以及 destination？你說對了啦！讓我們來看一下："
             ],
             "afterMarkdowns": [
-                "哇！這個指令強而有力，我們在 local 建立了一個新的 `foo` branch，下載了 remote 的 `main` 的 commit，並且放到 local 的 `foo` branch，之後 merge `foo` branch 到我們目前所 checkout 的 `bar` branch。這實在是太超過了！！！"
+              "哇！這個指令強而有力，我們在 local 建立了一個新的 `foo` branch，下載了 remote 的 `main` 的 commit，並且放到 local 的 `foo` branch，之後 merge `foo` branch 到我們目前所 checkout 的 `bar` branch。這實在是太超過了！！！"
             ],
             "command": "git pull origin main:foo",
             "beforeCommand": "git clone; git fakeTeamwork; go -b bar; git commit"
@@ -555,7 +635,7 @@ exports.level = {
         }
       ]
     },
-    "zh_CN":{
+    "zh_CN": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -600,7 +680,7 @@ exports.level = {
               "如果我们指定要抓取的 place，所有的事情都会跟之前一样发生，只是增加了 merge 操作"
             ],
             "afterMarkdowns": [
-              "看到了吧! 通过指定 `main` 我们更新了 `o/main`。然后将 `o/main` merge 到我们的检出位置，**无论**我们当前检出的位置是哪。"
+              "看到了吧! 通过指定 `main` 我们更新了 `o/main`。然后将 `o/main` merge 到我们的所在的分支，**无论**我们当前所在的位置是哪。"
             ],
             "command": "git pull origin main",
             "beforeCommand": "git clone; go -b bar; git commit; git fakeTeamwork"
@@ -613,7 +693,7 @@ exports.level = {
               "pull 也可以用 source:destination 吗? 当然喽, 看看吧:"
             ],
             "afterMarkdowns": [
-              " 哇, 这个命令做的事情真多。它先在本地创建了一个叫 `foo` 的分支，从远程仓库中的 main 分支中下载提交记录，并合并到 `foo`，然后再 merge 到我们的当前检出的分支 `bar` 上。操作够多的吧？！"
+              " 哇, 这个命令做的事情真多。它先在本地创建了一个叫 `foo` 的分支，从远程仓库中的 main 分支中下载提交记录，并合并到 `foo`，然后再 merge 到我们的当前所在的分支 `bar` 上。操作够多的吧？！"
             ],
             "command": "git pull origin main:foo",
             "beforeCommand": "git clone; git fakeTeamwork; go -b bar; git commit"
@@ -639,7 +719,7 @@ exports.level = {
               "",
               "Da du jetzt so ziemlich *alles* kennst, was es an Optionen für `git fetch` und `git push` gibt, ist kaum noch etwas zu Optionen für `git pull` zu sagen. :)",
               "",
-              "Das liegt daran, dass `git pull` letztendlich *wirklich* nur eine Abkürzuung für `fetch` gefolgt von einem `merge` von dem, was auch immer gerade heruntergeladen wurde, ist. Denk es dir als ein `git fetch` mit denselben Optionen und einem anschließenden Merge.",
+              "Das liegt daran, dass `git pull` letztendlich *wirklich* nur eine Abkürzung für `fetch` gefolgt von einem `merge` von dem, was auch immer gerade heruntergeladen wurde, ist. Denk es dir als ein `git fetch` mit denselben Optionen und einem anschließenden Merge.",
               "",
               "Das trifft sogar zu, wenn du völlig abgedrehte Optionen verwendest. Ein paar Beispiele:"
             ]
@@ -698,6 +778,89 @@ exports.level = {
           "options": {
             "markdowns": [
               "Ok, um's zu Ende zu bringen versuch das Ziel aus der Zielgrafik zu erreichen. Du wirst einige Commits herunterladen, einige neue Branches anlegen und diese in andere mergen müssen, aber das sollte nicht allzu viele Befehle benötigen. :P"
+            ]
+          }
+        }
+      ]
+    },
+    "ja": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Pullの引数",
+              "",
+              "`git fetch`と`git pull`の引数について学んできたので、`git pull`について新しく学ばないといけないことは殆ど残っていません！",
+              "",
+              "なぜなら、実は`git pull`はfetchした後に、fetchしたコミットをマージするための省略形だからです！",
+              "",
+              "これはとても複雑な引数を与えた場合でも変わりません。いくつか、例を見てみましょう!"
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "ここでは同等の働きをするコマンドを紹介します。",
+              "",
+              "`git pull  origin foo` は次のコマンドと同じ働きをします。",
+              "",
+              "`git fetch origin foo; git merge o/foo`",
+              "",
+              "他にも...",
+              "",
+              "`git pull  origin bar~1:bugFix` は次のコマンドと同じ働きをします。",
+              "",
+              "`git fetch origin bar~1:bugFix; git merge bugFix`",
+              "",
+              "ご覧の通り、`git pull`は単なるfetch + mergeの略語であり、git pullが必要とするのはコミットがどこへ行くのか（fetchにおける`<destination>`）だけなのです。",
+              "",
+              "デモを見ていきましょう！"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "fetchする場所を指定すると"
+            ],
+            "afterMarkdowns": [
+              "ご覧ください！`main`を指定することで、`o/main`にコミットをダウンロードしてきました。そして`o/main`を現在チェックアウトしている場所にマージしましたが、これはローカルの`main`ブランチではありません。",
+              "",
+              "このような挙動をするので、複数のブランチを更新するためには異なる場所（かつ同じ引数）で`git pull`を実行しなければいけません。"
+            ],
+            "command": "git pull origin main",
+            "beforeCommand": "git clone; go -b bar; git commit; git fakeTeamwork"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "`<source>`と`<destination>`にも対応しているかですって？",
+              "",
+              "その通りです。実際に見ていきましょう！"
+            ],
+            "afterMarkdowns": [
+              "ひとつのコマンドで実に大量の操作を行っていますね！",
+              "ローカルに`foo`ブランチを作成し、リモート上の`main`から`foo`ブランチにコミットをダウンロードして、そのブランチを今、チェックアウトしている`bar`ブランチにmergeしました！"
+            ],
+            "command": "git pull origin main:foo",
+            "beforeCommand": "git clone; git fakeTeamwork; go -b bar; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "示されているゴールの状態になるように頑張ってください！",
+              "",
+              "コミットをいくつかfetchして新しいブランチを作成し、それらのブランチを他のブランチにmergeする必要があります。",
+              "",
+              "しかし、それほど多くのコマンドは必要ありません！"
             ]
           }
         }
@@ -819,7 +982,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "place를 지정하면, 이전에 fecth를 하던때와 완전히 똑같이 진행되고 fetch한것을 병합합니다."
+              "place를 지정하면, 이전에 fetch를 하던때와 완전히 똑같이 진행되고 fetch한것을 병합합니다."
             ],
             "afterMarkdowns": [
               "보이죠! `main`를 지정해서 우리는 `o/main`에 평소처럼 커밋들을 내려받았습니다. 그다음 우리가 있는 곳으로 `o/main`를 병합했습니다 현재 체크아웃된 브랜치와 *상관없이* 말이죠"
@@ -835,7 +998,7 @@ exports.level = {
               "source 와 destination 모두 적용될까요? 추측해보세요! 확인해봅시다:"
             ],
             "afterMarkdowns": [
-              "이야, 명령어 하나에 많은게 일어나고있습니다. 로컬에 이름이 `foo`인 새 브랜치를 만들고, 원격 저장소의 master에서 이 브랜치 `foo`에 커밋들을 내려받습니다, 그후 그 브랜치를 우리가 현재 체크아웃한 브랜치 `bar`로 병합했습니다. 오오오!!!"
+              "이야, 명령어 하나에 많은게 일어나고있습니다. 로컬에 이름이 `foo`인 새 브랜치를 만들고, 원격 저장소의 main에서 이 브랜치 `foo`에 커밋들을 내려받습니다, 그후 그 브랜치를 우리가 현재 체크아웃한 브랜치 `bar`로 병합했습니다. 오오오!!!"
             ],
             "command": "git pull origin main:foo",
             "beforeCommand": "git clone; git fakeTeamwork; go -b bar; git commit"
@@ -945,7 +1108,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Dưới đây là một vài câu lệnh tương đồng nhau trong git:",
+              "Dưới đây là một vài câu lệnh tương đồng nhau trong Git:",
               "",
               "`git pull  origin foo` tương đương với:",
               "",
@@ -970,7 +1133,7 @@ exports.level = {
               "Nếu ta chỉ định vị trí để nạp, mọi thứ diễn ra như với git fetch nhưng giờ đây có thêm một bước đó là ta hợp nhất những gì mà ta đã nạp"
             ],
             "afterMarkdowns": [
-              "Thấy chứ! Bằng cách chỉ định nhánh `main` ta tải các commit xuống nhánh `o/main` như thường lệ. Sau đó hợp nhất nhánh `o/main` vào nhánh cục bộ mà ta đang đứng, nhánh mà *không phải* nhánh cục bộ `main`. Nhờ vậy mà ta có thể chạy cùng một lệnh git pull(với cùng tham số) nhiều lần ở những vị trí khác nhau để áp dụng cùng cập nhật lên các nhánh khác nhau."
+              "Thấy chứ! Bằng cách chỉ định nhánh `main` ta tải các commit xuống nhánh `o/main` như thường lệ. Sau đó hợp nhất nhánh `o/main` vào nhánh cục bộ mà ta đang đứng, nhánh mà *không phải* nhánh cục bộ `main`. Nhờ vậy mà ta có thể chạy cùng một lệnh git pull (với cùng tham số) nhiều lần ở những vị trí khác nhau để áp dụng cùng cập nhật lên các nhánh khác nhau."
             ],
             "command": "git pull origin main",
             "beforeCommand": "git clone; go -b bar; git commit; git fakeTeamwork"
@@ -1072,6 +1235,154 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Argumenty git pull",
+              "",
+              "Teraz, kiedy wiesz już właściwie *wszystko*, co można wiedzieć o argumentach `git fetch` oraz `git push`, naprawdę nie zostało już prawie nic do omówienia przy `git pull` :)",
+              "",
+              "To dlatego, że w zasadzie `git pull` to *naprawdę* tylko skrót polecenia fetch i scalania wszystkiego, co zostało nim pobrane. Możesz to sobie wyobrazić jako uruchomienie `git fetch` z określonymi *tymi samymi* argumentami, a potem scalenie pobranych commitów *tam*, dokąd trafiły.",
+              "",
+              "I działa to w ten sposób, nawet jeśli określisz kompletnie szalone argumenty. Zobaczmy kilka przykładów:"
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Oto kilka równoważnych poleceń w Gicie:",
+              "",
+              "`git pull  origin foo` nie różni się od:",
+              "",
+              "`git fetch origin foo; git merge o/foo`",
+              "",
+              "A...",
+              "",
+              "`git pull  origin bar~1:bugFix` daje taki sam efekt jak:",
+              "",
+              "`git fetch origin bar~1:bugFix; git merge bugFix`",
+              "",
+              "Widzisz? Polecenie `git pull` to naprawdę tylko skrót dla fetch + merge i jedyne, co się liczy dla `git pull`, to gdzie trafią commity (argument `celu`, który Git zinterpretuje sobie, wykonując fetch).",
+              "",
+              "Zobaczmy demo:"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Jeśli określimy dla fetch miejsce, to wszystko potoczy się tak jak wcześniej, ale scalimy wszystko, co zostało pobrane przez fetch."
+            ],
+            "afterMarkdowns": [
+              "Zobacz! Określając `main`, pobraliśmy commity do `o/main` tak jak zawsze. Potem scaliliśmy `o/main` z aktualnie wybranym miejscem, którym *nie* jest lokalna gałąź `main`. Właśnie z tego powodu może mieć sens wykonanie git pull wiele razy (z tymi samymi argumentami) z różnych lokalizacji, aby zaktualizować wiele gałęzi."
+            ],
+            "command": "git pull origin main",
+            "beforeCommand": "git clone; go -b bar; git commit; git fakeTeamwork"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Czy w przypadku źródła i celu będzie tak samo? Jasne, że tak! Zobaczmy:"
+            ],
+            "afterMarkdowns": [
+              "No nieźle, jedno polecenie, a tyle się dzieje. Stworzyliśmy nową lokalną gałąź `foo`, pobraliśmy commity ze zdalnej gałęzi `main` do `foo`, a potem jeszcze scaliliśmy ją z aktualnie wybraną gałęzią `bar`. Grubo ponad osiem tysięcy!"
+            ],
+            "command": "git pull origin main:foo",
+            "beforeCommand": "git clone; git fakeTeamwork; go -b bar; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Oki, żeby ukończyć poziom, doprowadź drzewo do takiego stanu jak na wizualizacji. Musisz pobrać parę commitów, stworzyć kilka gałęzi i scalić je z innymi, ale nie powinno to wymagać zbyt wielu poleceń :P"
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Parametri di git pull",
+              "",
+              "Ora che conosci praticamente *tutto* quello che c'è da sapere sui parametri per `git fetch` e `git push`, non è rimasto quasi nulla di cui parlare per git pull :)",
+              "",
+              "Questo perché git pull alla fine non è altro che una scorciatoia per un fetch seguito dalla fusione verso ciò che è stato appena recuperato. Puoi vederlo come eseguire git fetch con gli *stessi* parametri specificati e poi eseguire una fusione *dove* i commit reucperati sono finiti.",
+              "",
+              "Ciò è valido anche quando vengono usati dei parametri incredibilmente complessi. Vediamo qualche esempio:"
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Ecco alcuni comandi equivalenti in git:",
+              "",
+              "`git pull  origin foo` è equivalente a:",
+              "",
+              "`git fetch origin foo; git merge o/foo`",
+              "",
+              "E...",
+              "",
+              "`git pull  origin bar~1:bugFix` è equivalente a:",
+              "",
+              "`git fetch origin bar~1:bugFix; git merge bugFix`",
+              "",
+              "Visto? git pull non è altro che una scorciatoia per fetch + merge, e l'unica cosa che interessa a quel comando è la posizione d'arrivo dei commit (il parametro `destination` specificato durante il fetch).",
+              "",
+              "Vediamo una demo:"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Se specifichiamo il luogo da cui vogliamo recuperare i dati, l'unico cambiamento rispetto alla lezione precedente consiste nella fusione con ciò che è stato appena recuperato."
+            ],
+            "afterMarkdowns": [
+              "Visto! specificando `main` abbiamo scaricato i commit sul ramo `o/main` come sempre. Poi abbiamo fuso `o/main` con il ramo sul quale stavamo lavorando attualmente, il quale *non* è il ramo `main` locale. Per questo motivo può avere effettivamente senso eseguire più volte git pull (con gli stessi parametri) da posizioni differenti per aggiornare così più rami."
+            ],
+            "command": "git pull origin main",
+            "beforeCommand": "git clone; go -b bar; git commit; git fakeTeamwork"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Funziona anche con source e destination? Ci puoi scommettere! Vediamolo all'opera:"
+            ],
+            "afterMarkdowns": [
+              "Wow, è tantissimo per un comando solo! Abbiamo creato un nuovo ramo locale chiamato `foo`, scaricato i commit dal main remoto sul nuovo ramo `foo`, e poi fuso quel ramo con `bar`, quello sul quale stavamo lavorando attualmente. È oltre gli 8000!!!"
+            ],
+            "command": "git pull origin main:foo",
+            "beforeCommand": "git clone; git fakeTeamwork; go -b bar; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Ok per concludere, raggiungi lo stato mostrato nella finestra dell'obiettivo. Dovrai scaricare alcuni commit, creare alcuni rami, e fondere quei rami in altri rami, ma senza usare troppi comandi :P"
+            ]
+          }
+        }
+      ]
+    },
   }
 };

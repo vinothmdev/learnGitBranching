@@ -109,6 +109,12 @@ class IntlHelperBarView extends React.Component{
         this.fireCommand('locale vi; levels');
       }.bind(this)
     }, {
+      text: 'Türkçe',
+      testID: 'turkish',
+      onClick: function() {
+        this.fireCommand('locale tr_TR; levels');
+      }.bind(this)
+    }, {
       text: 'Galego',
       testID: 'galician',
       onClick: function() {
@@ -133,6 +139,12 @@ class IntlHelperBarView extends React.Component{
         this.fireCommand('locale ta_IN; levels');
       }.bind(this)
     }, {
+        text: "italiano",
+        testID: "italian",
+        onClick: function () {
+          this.fireCommand("locale it_IT; levels");
+        }.bind(this),
+    },{
       icon: 'signout',
       onClick: function() {
         this.props.onExit();

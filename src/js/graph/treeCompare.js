@@ -11,12 +11,12 @@ TreeCompare.dispatchFromLevel = function(levelBlob, treeToCompare) {
   return TreeCompare.dispatch(levelBlob, goalTreeString, treeToCompare);
 };
 
-TreeCompare.onlyMasterCompared = function(levelBlob) {
+TreeCompare.onlyMainCompared = function(levelBlob) {
   var getAroundLintTrue = true;
   switch (getAroundLintTrue) {
-    case !!levelBlob.compareOnlyMaster:
-    case !!levelBlob.compareOnlyMasterHashAgnostic:
-    case !!levelBlob.compareOnlyMasterHashAgnosticWithAsserts:
+    case !!levelBlob.compareOnlyMain:
+    case !!levelBlob.compareOnlyMainHashAgnostic:
+    case !!levelBlob.compareOnlyMainHashAgnosticWithAsserts:
       return true;
     default:
       return false;
@@ -50,9 +50,9 @@ TreeCompare.dispatchShallow = function(levelBlob, goalTreeString, treeToCompare)
   var getAroundLintTrue = true;
   // i actually prefer this to else if
   switch (getAroundLintTrue) {
-    case !!levelBlob.compareOnlyMaster:
+    case !!levelBlob.compareOnlyMain:
       return TreeCompare.compareBranchWithinTrees(
-        treeToCompare, goalTreeString, 'master'
+        treeToCompare, goalTreeString, 'main'
       );
     case !!levelBlob.compareAllBranchesAndEnforceBranchCleanup:
       return TreeCompare.compareAllBranchesAndEnforceBranchCleanup(
@@ -66,14 +66,16 @@ TreeCompare.dispatchShallow = function(levelBlob, goalTreeString, treeToCompare)
       return TreeCompare.compareAllBranchesWithinTreesHashAgnostic(
         treeToCompare, goalTreeString
       );
-    case !!levelBlob.compareOnlyMasterHashAgnostic:
+    case !!levelBlob.compareOnlyMainHashAgnostic:
       return TreeCompare.compareBranchesWithinTreesHashAgnostic(
-        treeToCompare, goalTreeString, ['master']
+        treeToCompare, goalTreeString, ['main']
       );
-    case !!levelBlob.compareOnlyMasterHashAgnosticWithAsserts:
+    case !!levelBlob.compareOnlyMainHashAgnosticWithAsserts:
       return TreeCompare.compareBranchesWithinTreesHashAgnostic(
-        treeToCompare, goalTreeString, ['master']
+        treeToCompare, goalTreeString, ['main']
       ) && TreeCompare.evalAsserts(treeToCompare, levelBlob.goalAsserts);
+    case !!levelBlob.onlyEvaluateAsserts:
+      return TreeCompare.evalAsserts(treeToCompare, levelBlob.goalAsserts);
     default:
       return TreeCompare.compareAllBranchesWithinTreesAndHEAD(
         treeToCompare, goalTreeString
@@ -98,7 +100,7 @@ TreeCompare.compareAllBranchesAndEnforceBranchCleanup = function(treeToCompare, 
 
   // Unlike compareAllBranchesWithinTrees, here we consider both the branches
   // in the goalTree and the branches in the treeToCompare. This means that
-  // we enfoce that you clean up any branches that you have locally that
+  // we enforce that you clean up any branches that you have locally that
   // the goal does not have. this is helpful when we want to verify that you
   // have deleted branch, for instance.
   var allBranches = Object.assign(
@@ -233,11 +235,14 @@ TreeCompare.evalAssertsOnBranch = function(tree, branchName, asserts) {
   var branch = tree.branches[branchName];
   var queue = [branch.target];
   var data = {};
+  var numCommits = 0;
   while (queue.length) {
     var commitRef = queue.pop();
     data[this.getBaseRef(commitRef)] = this.getNumHashes(commitRef);
     queue = queue.concat(tree.commits[commitRef].parents);
+    numCommits++;
   }
+  data['__num_commits_upstream'] = numCommits;
 
   var result = true;
   asserts.forEach(function(assert) {
@@ -245,7 +250,6 @@ TreeCompare.evalAssertsOnBranch = function(tree, branchName, asserts) {
       result = result && assert(data);
     } catch (err) {
       console.warn('error during assert', err);
-      console.log(err);
       result = false;
     }
   });

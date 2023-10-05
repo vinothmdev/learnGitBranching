@@ -67,7 +67,8 @@ var Sandbox = Backbone.View.extend({
 
   initGitShim: function(options) {
     this.gitShim = new GitShim({
-      beforeCB: this.beforeCommandCB.bind(this)
+      beforeCB: this.beforeCommandCB.bind(this),
+      afterCB: this.afterCommandCB.bind(this)
     });
   },
 
@@ -85,7 +86,7 @@ var Sandbox = Backbone.View.extend({
   },
 
   releaseControl: function() {
-    // we will be handling commands that are submitted, mainly to add the sanadbox
+    // we will be handling commands that are submitted, mainly to add the sandbox
     // functionality (which is included by default in ParseWaterfall())
     Main.getEventBaton().releaseBaton('commandSubmitted', this.commandSubmitted, this);
     // we obviously take care of sandbox commands
@@ -113,12 +114,21 @@ var Sandbox = Backbone.View.extend({
   },
 
   beforeCommandCB: function(command) {
+    this._treeBeforeCommand = this.mainVis.gitEngine.printTree();
+  },
+
+  afterCommandCB: function(command) {
     this.pushUndo();
   },
 
   pushUndo: function() {
+    let currentTree = this.mainVis.gitEngine.printTree();
+    if(currentTree === this._treeBeforeCommand) {
+      return;
+    }
+
     // go ahead and push the three onto the stack
-    this.undoStack.push(this.mainVis.gitEngine.printTree());
+    this.undoStack.push(this._treeBeforeCommand);
   },
 
   undo: function(command, deferred) {

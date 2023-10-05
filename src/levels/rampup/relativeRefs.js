@@ -1,42 +1,45 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"C3\",\"id\":\"HEAD\"}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"C3\",\"id\":\"HEAD\"}}",
   "solutionCommand": "git checkout bugFix^",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C2\",\"id\":\"master\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C2\",\"id\":\"main\"},\"bugFix\":{\"target\":\"C4\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}",
   "name": {
     "en_US": "Relative Refs (^)",
     "fr_FR": "Références relatives (^)",
-    "ja"   : "相対リファレンス (^)",
+    "ja": "相対リファレンス (^)",
     "zh_CN": "相对引用（^）",
     "zh_TW": "相對引用（^）",
     "es_AR": "Referencias relativas (^)",
+    "es_MX": "Referencias relativas (^)",
     "es_ES": "Referencias relativas (^)",
     "pt_BR": "Referências relativas (^)",
-    "gl"   : "Referencias relativas (^)",
+    "gl": "Referencias relativas (^)",
     "de_DE": "Relative Referenzen (^)",
     "ru_RU": "Относительные ссылки (^)",
-    "ko"   : "상대 참조 (^) (Relative Refs)",
+    "ko": "상대 참조 (^) (Relative Refs)",
     "uk": "Відносні посилання",
     "vi": "Tham chiếu tương đối (^)",
     "sl_SI": "Relativne Reference (^)",
+    "it_IT": "Riferimenti relativi (^)",
     "pl": "Referencje względne (^)",
   },
   "hint": {
     "en_US": "Remember the Caret (^) operator!",
     "fr_FR": "Rappelez-vous de l'opérateur circonflexe (^)",
-    "ja"   : "相対リファレンス(^)を思い出して！",
+    "ja": "相対リファレンス(^)を思い出して！",
     "de_DE": "Denk an den Dach-Operator (^)!",
     "es_AR": "¡No te olvides del operador ^!",
     "es_ES": "¡No te olvides del operador ^!",
     "pt_BR": "Não se esqueça do operador circunflexo (^)",
-    "gl"   : "Non se esqueza do operador circunflexo (^)",
+    "gl": "Non se esqueza do operador circunflexo (^)",
     "zh_CN": "记住操作符（^）！",
     "zh_TW": "不要忘記插入（^）符號！",
     "ru_RU": "Не забудь оператор `^`",
-    "ko"   : "(^)연산자를 기억하세요!",
+    "ko": "(^)연산자를 기억하세요!",
     "uk": "Не забудь оператор `^`",
     "vi": "Đừng quên dấu mũ (^)!",
     "sl_SI": "Spomni se na (^) operator!",
-    "pl": "Pamiętaj o operatorze karetu (^)!",
+    "it_IT": "Ricorda l'operatore Caret(^)... l'accento circonflesso!",
+    "pl": "Pamiętaj o operatorze wstawienia (^)!",
   },
   "startDialog": {
     "en_US": {
@@ -122,9 +125,9 @@ exports.level = {
             "markdowns": [
               "## Références relatives",
               "",
-              "Se déplacer dans Git en spécifiant des identifiants de commits (hashes) peut être un peu agaçant. Dans le monde réel vous n'aurez pas une vue sur un joli arbre des commits à côté de votre terminal, ainsi vous aurez à utiliser `git log` pour connaître les identifiants.",
+              "Se déplacer dans Git en spécifiant des identifiants de commits (hashes) peut être un peu agaçant. Dans le monde réel vous n'aurez pas une vue sur un joli arbre des commits à côté de votre terminal, et vous devrez donc utiliser `git log` pour connaître les identifiants.",
               "",
-              "De plus, les identifiants sont plus longs dans le vrai monde de Git qu'ici. Par exemple, l'identifiant du commit introduit au précédent niveau était `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. Difficilement mémorisable ...",
+              "De plus, les identifiants sont plus longs dans le vrai monde de Git qu'ici. Par exemple, l'identifiant du commit introduit au précédent niveau était `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. Difficilement mémorisable...",
               "",
               "Le côté positif est que Git est intelligent avec les identifiants. Vous avez seulement à spécifier les premiers caractères de l'identifiant jusqu'à ce qu'il reconnaisse exactement le commit. Ainsi je peux taper `fed2` au lieu de la longue chaîne ci-dessus."
             ]
@@ -136,9 +139,9 @@ exports.level = {
             "markdowns": [
               "Comme je l'ai dit, spécifier un commit par son identifiant n'est pas très pratique, c'est pourquoi Git a des références relatives. Elles sont géniales !",
               "",
-              "Avec les références relatives vous pouvez commencer par vous placer à un endroit mémorisable (comme la branche `bugFix` ou `HEAD`) et travailler depuis ici.",
+              "Avec les références relatives vous pouvez commencer par vous placer à un endroit mémorisable (comme la branche `bugFix` ou `HEAD`) et travailler depuis cet endroit.",
               "",
-              "Les commits relatifs sont puissants, et on va en introduire deux simples ici :",
+              "Les commits relatifs sont puissants, et on va en présenter deux simples ici :",
               "",
               "* Revenir d'un commit en arrière avec `^`",
               "* Revenir de plusieurs en arrière avec `~<num>`"
@@ -158,7 +161,7 @@ exports.level = {
               "Faisons un checkout du commit avant main."
             ],
             "afterMarkdowns": [
-              "Boum ! Fini. Bien plus facile qu'écrire l'identifiant du commit."
+              "Boum ! Fini. Bien plus facile que d'écrire l'identifiant du commit."
             ],
             "command": "git checkout main^",
             "beforeCommand": "git commit"
@@ -414,6 +417,81 @@ exports.level = {
         }
       ]
     },
+    "es_MX": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Referencias relativas",
+              "",
+              "Moverse por ahí en Git usando los hashes de los commits puede volverse un tanto tedioso. En el mundo real no vas a tener una visualización de commits tan linda en la terminal, así que vas a tener que usar `git log` para ver los hashes.",
+              "",
+              "Peor aún, los hashes en general son mucho más largos en el git real, también. Por ejemplo, el hash del commit que introduje en el nivel anterior es `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. No es algo particularmente fácil de nombrar...",
+              "",
+              "Lo interesante es que Git es bastante astuto con los hashes. Sólo requiere que especifiques una cantidad de caracteres suficientes para identificar unívocamente al commit. Entonces, yo podría simplemente tipear `fed2` en lugar de esa larga cadena de arriba."
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Como ya dije, especificar los commits por su hash no es la manera más conveniente y por eso Git tiene referencias relativas. ¡Son geniales!",
+              "",
+              "Con las referencias relativas puedes arrancar de algún lugar memoralbe (como la rama `bugFix`, o `HEAD`) y trabajar desde ahí.",
+              "",
+              "Los commits relativos son poderosos, pero ahora vamos a presentar sólo dos formas simples:",
+              "",
+              "* Moverse un commit hacia atrás con `^`",
+              "* Moverse una cantidad de commits hacia atrás con `~<num>`"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Veamos el operador ^ primero. Cada vez que le agregas eso al nombre de una referencia, le estás diciendo a git que use el padre del commit especificado.",
+              "",
+              "Entonces, `main^` quiere decir que es equivalente a \"el primer padre de `main`\".",
+              "",
+              "`main^^` es el _abuelo_ (segunda generación de ancestros) de `main`",
+              "",
+              "Veamos el commit que está antes de main aquí."
+            ],
+            "afterMarkdowns": [
+              "Vientos! Ahí está. Mucho más simple que escribir el hash de ese commit."
+            ],
+            "command": "git checkout main^",
+            "beforeCommand": "git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "También puedes referenciar a `HEAD` como una referencia relativa. Usémoslo un par de veces para movernos hacia atrás en nuestro árbol."
+            ],
+            "afterMarkdowns": [
+              "¡Fácil! Podemos volver en el tiempo con `HEAD^`"
+            ],
+            "command": "git checkout C3; git checkout HEAD^; git checkout HEAD^; git checkout HEAD^",
+            "beforeCommand": "git commit; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Para completar este nivel, haz checkout sobre el padre del commit de `bugFix`. Esto va a detachear a `HEAD`.",
+              "",
+              "Puedes especificar el hash si quieres, pero mejor ¡trata de usar la referencia relativa!"
+            ]
+          }
+        }
+      ]
+    },
     "pt_BR": {
       "childViews": [
         {
@@ -599,13 +677,13 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "首先看看操作符 (^)。把这个符号加在引用名称的后面，表示让 Git 寻找指定提交记录的父提交。",
+              "首先看看操作符 (^)。把这个符号加在引用名称的后面，表示让 Git 寻找指定提交记录的 parent 提交。",
               "",
-              "所以 `main^` 相当于“`main` 的父节点”。",
+              "所以 `main^` 相当于“`main` 的 parent 节点”。",
               "",
-              "`main^^` 是 `main` 的第二个父节点",
+              "`main^^` 是 `main` 的第二个 parent 节点",
               "",
-              "现在咱们切换到 main 的父节点"
+              "现在咱们切换到 main 的 parent 节点"
             ],
             "afterMarkdowns": [
               "搞定。这种方式是不是比输入哈希值方便多了？！"
@@ -631,7 +709,7 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "要完成此关，切换到 `bugFix` 的父节点。这会进入分离 `HEAD` 状态。",
+              "要完成此关，切换到 `bugFix` 的 parent 节点。这会进入分离 `HEAD` 状态。",
               "",
               "如果你愿意的话，使用哈希值也可以过关，但请尽量使用相对引用！"
             ]
@@ -680,7 +758,7 @@ exports.level = {
               "",
               " `main^^` 是 `main` 的 grandparent commit（往前推兩代）",
               "",
-              "切換到 master的 parent commit"
+              "切換到 main的 parent commit"
             ],
             "afterMarkdowns": [
               "看吧！完成了。這種方式比輸入代表 commit 的 hash 值簡單多了！"
@@ -755,7 +833,7 @@ exports.level = {
               "",
               "そして`main^^`とはその親の一つの上のコミット(２代前の親)を指します。",
               "",
-              "masterの上のコミットをここで見てみましょう"
+              "mainの上のコミットをここで見てみましょう"
             ],
             "afterMarkdowns": [
               "やりました！コミットハッシュを書くよりずっと簡単ですね。"
@@ -816,7 +894,7 @@ exports.level = {
               "Относительные ссылки - мощный инструмент, но мы покажем два простых способа использования:",
               "",
               "* Перемещение на один коммит назад `^`",
-              "* Перемещение на <num> коммитов назад `~<num>`"
+              "* Перемещение на несколько коммитов назад `~<num>`"
             ]
           }
         },
@@ -864,7 +942,7 @@ exports.level = {
         }
       ]
     },
-  "ko": {
+    "ko": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -908,7 +986,7 @@ exports.level = {
               "main 위에 있는 부모를 체크아웃 해 봅시다."
             ],
             "afterMarkdowns": [
-              "Boom! 됬습니다. 커밋의 해시를 입력하는 것보다 훨씬 쉬운 방법입니다."
+              "Boom! 됐습니다. 커밋의 해시를 입력하는 것보다 훨씬 쉬운 방법입니다."
             ],
             "command": "git checkout main^",
             "beforeCommand": "git commit"
@@ -1022,11 +1100,11 @@ exports.level = {
             "markdowns": [
               "## Tham chiếu tương đối",
               "",
-              "Dịch chuyển trong Git bằng cách chỉ định mã băm(hash) của commit cỏ vẻ hơi buồn tẻ. Trong đời thực thì sẽ không có mô tả git trực quan ngay bên cạnh terminal của bạn đâu, nên nếu bạn muốn nhìn mã băm của commit thì phải dùng `git log` thôi.",
+              "Dịch chuyển trong Git bằng cách chỉ định mã băm (hash) của commit cỏ vẻ hơi buồn tẻ. Trong đời thực thì sẽ không có mô tả Git trực quan ngay bên cạnh terminal của bạn đâu, nên nếu bạn muốn nhìn mã băm của commit thì phải dùng `git log` thôi.",
               "",
               "Hơn nữa, mã băm thực tế thường dài hơn rất nhiều. Ví dụ, mã băm của commit được giới thiệu trong phần trước là `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. Đọc mà xoắn hết cả lưỡi...",
               "",
-              "Được cái là Git cũng khá thông minh về mã băm. Nó chỉ yêu cầu bạn chỉ định mã băm đủ để xác định commit. Cho nên tôi có thể đơn giản chỉ cần gõ `fed2` thay vì cái chuỗi dài ngoằng phía trên."
+              "Được cái là Git cũng khá thông minh về mã băm. Chỉ cần cung cấp kí tự mã băm đủ để phân biệt với các commit khác. Cho nên tôi có thể đơn giản chỉ cần gõ `fed2` thay vì cái chuỗi dài ngoằng phía trên."
             ]
           }
         },
@@ -1034,14 +1112,14 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Như tôi đã nói, xác định commit bằng mã băm của nó chẳng hề thuận tiện tẹo nào, đó là tại sao Git có những `tham chiếu tương đối`. Chúng rất tuyệt vời!",
+              "Như tôi đã nói, xác định commit bằng mã băm chẳng hề thuận tiện tẹo nào, đó là tại sao Git có những `tham chiếu tương đối`. Chúng rất tuyệt vời!",
               "",
               "Với tham chiếu tương đối, bạn có thể bắt đầu từ những nơi có thể ghi nhớ được (như là nhánh `bugFix` hoặc `HEAD`) và làm việc trên đó.",
               "",
-              "Những commits tương đối rất mạnh mẽ, nhưng chúng tôi sẽ chỉ giới thiệu 2 loại đơn giản sau:",
+              "Những commit tương đối (relative commits) rất mạnh mẽ, nhưng chúng tôi sẽ chỉ giới thiệu 2 loại đơn giản sau:",
               "",
-              "* Dịch chuyển 1 commit lên trên trong 1 lần với `^`",
-              "* Dịch chuyển nhiều commit lên trên trong 1 lần với `~<số>`"
+              "* Dịch chuyển lên 1 commit mỗi lần với `^`",
+              "* Dịch chuyển lên nhiều commit mỗi lần với `~<số>`"
             ]
           }
         },
@@ -1058,7 +1136,7 @@ exports.level = {
               "Thử nhảy sang commit trước main nào"
             ],
             "afterMarkdowns": [
-              "BÙUM! Đã xong. Đơn giản hơn gõ mã băm nhiều"
+              "BÙUM! Đã xong. Đơn giản hơn gõ mã băm nhiều."
             ],
             "command": "git checkout main^",
             "beforeCommand": "git commit"
@@ -1068,7 +1146,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Bạn cũng có thể dùng `HEAD` như là tham chiếu tương đối. Thử dùng nó để leo commit vài lần nào"
+              "Bạn cũng có thể dùng `HEAD` như là tham chiếu tương đối. Thử dùng nó để leo commit vài lần nào."
             ],
             "afterMarkdowns": [
               "Game là dễ! Du hành ngược thời gian với `HEAD^`"
@@ -1170,13 +1248,13 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "## Relatywne referencje",
+              "## Referencje względne",
               "",
-              "Poruszanie się w Gitcie poprzez określanie haszy commitów może być trochę nudne. W prawdziwym świecie nie będziesz miał ładnej wizualizacji drzewa commitów obok swojego terminalu (chyba, że będziesz używać Fork'a lub TortoiseGit'a). Będziesz musiał użyć `git log` aby zobaczyć hasz.",
+              "Poruszanie się w Gicie poprzez określanie haszy commitów może być trochę nudne. W prawdziwym świecie nie zobaczysz ładnej wizualizacji drzewa commitów obok swojego terminala (chyba, że używasz Forka lub TortoiseGita). Musisz użyć `git log`, aby zobaczyć hasze.",
               "",
-              "Co więcej, hasz jest zazwyczaj o wiele dłuższy w prawdziwym Gitcie. Na przykład, hash commitu, które był na początku poprzedniego poziomu to `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. Spróbuj to przeczytać!",
+              "Co więcej, hasze są zazwyczaj o wiele dłuższe w prawdziwym Gicie. Na przykład hash commita, który był na początku poprzedniego poziomu, to `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. Spróbuj to przeczytać!",
               "",
-              "Plusem jest to, że Git jest sprytny jeżeli chodzi o hasze. Wymaga jedynie podania tylu znaków haszu, aż do momentu, gdy jednoznacznie zidentyfikuje konkretny commit. Dlatego mogę wpisać jedynie `fed2` zamiast długiego łańcucha powyżej."
+              "Plusem jest to, że Git sprytnie radzi sobie z haszami. Wymaga jedynie podania tylu znaków hasza, ile potrzebuje, aby jednoznacznie zidentyfikować konkretny commit. Dlatego mogę wpisać jedynie `fed2` zamiast długiego łańcucha powyżej."
             ]
           }
         },
@@ -1184,14 +1262,14 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Jak już powiedzieliśmy, wybieranie commitów używając ich hasza nie jest najprzyjemniejszą rzeczą w życiu, dlatego Git ma referencje względne. Są niesamowite!",
+              "Jak już powiedzieliśmy, wybieranie commitów, używając ich hasza, nie jest najprzyjemniejszą rzeczą w życiu, dlatego Git ma referencje względne. Są niesamowite!",
               "",
-              "Korzystając z referencji względnych, możesz zacząć od miejsca, które zapamiętasz (jak np. gałąź `bugFix` lub `HEAD`) i pracować stamtąd.",
+              "Korzystając z referencji względnych, możesz zacząć od miejsca, które zapamiętasz (jak np. gałąź `bugFix` lub `HEAD`), i pracować stamtąd.",
               "",
               "Relatywne commity są potężne, ale pokażemy tu tylko dwie proste sytuacje:",
               "",
-              "* Poruszanie się wstecz o jeden commit `^`",
-              "* Poruszanie się wstecz o ileś commitów `~<num>`"
+              "* Poruszanie się wstecz o jeden commit za pomocą `^`",
+              "* Poruszanie się wstecz o ileś commitów z `~<num>`"
             ]
           }
         },
@@ -1199,16 +1277,16 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Spójrzmy najpierw na operator Karety / daszek (^). Za każdym razem, gdy dodajesz go do referencji względnej, mówisz Gitowi, aby znalazł rodzica określonego commita.",
+              "Spójrzmy najpierw na operator karety / daszek (^). Za każdym razem, gdy dodajesz go do referencji względnej, mówisz Gitowi, aby znalazł rodzica określonego commita.",
               "",
-              "Więc wpisując `main^` mamy na myśli \"pierwszego rodzica z gałęzi `main`\".",
+              "Wpisując zatem `main^`, mamy na myśli \"pierwszego rodzica z gałęzi `main`\".",
               "",
-              "`main^^` to dziadek (przodek drugiego stopnia) gałęzi `main`",
+              "`main^^` to dziadek (przodek drugiego stopnia) gałęzi `main`.",
               "",
-              "Zcheckoutujmy commit powyżej `main`."
+              "Zcheckoutujmy commit powyżej `main`:"
             ],
             "afterMarkdowns": [
-              "Boom! Zrobione. O wiele łatwiej niż wpisując hasz commitu."
+              "Tadam! Gotowe! O wiele łatwiej niż wpisując hasz commita."
             ],
             "command": "git checkout main^",
             "beforeCommand": "git commit"
@@ -1221,7 +1299,7 @@ exports.level = {
               "Możesz również odwołać się do `HEAD` jako referencji względnej. Użyjmy tego kilka razy, aby przesunąć się w górę drzewa commitów."
             ],
             "afterMarkdowns": [
-              "Łatwizna! Możemy podróżować do tyłu w czasie używając `HEAD^`"
+              "Łatwizna! Możemy cofać się w czasie, używając `HEAD^`"
             ],
             "command": "git checkout C3; git checkout HEAD^; git checkout HEAD^; git checkout HEAD^",
             "beforeCommand": "git commit; git commit"
@@ -1231,13 +1309,90 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "Aby ukończyć ten poziom, zcheckoutuj commit'a-rodzica z gałęzi `bugFix`. To spowoduje odczepienie `HEAD`a.",
+              "Aby ukończyć ten poziom, checkoutuj commita-rodzica z gałęzi `bugFix`. To spowoduje odczepienie `HEADa`.",
               "",
-              "Możesz wybrać commit'a po haszu jeżeli chcesz, ale spróbuj wykorzystać to czego się nauczyłeś i użyć referencji względnej!"
+              "Możesz wybrać commita po haszu, jeżeli chcesz, ale spróbuj wykorzystać nowe umiejętności i użyć referencji względnej!"
             ]
           }
         }
       ]
     },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Riferimenti relativi",
+              "",
+              "Spostarsi in Git specificando l'hash dei commit può essere una scocciatura. Nella vita vera non avrai un bell'albero con tutti i commit sullo schermo, dovrai usare `git log` per vedere gli hash.",
+              "",
+              "Inoltre, gli hash sono solitamente molto più lunghi. Per esempio, l'hash del commit nel livello precedente è `fed2da64c0efc5293610bdd892f82a58e8cbc5d8`. Non così semplice da ricordare...",
+              "",
+              "La nota positiva è che Git è furbo con gli hash. Richiede un numero di caratteri dell'hash tali da poter identificare in modo univoco il commit. Posso scrivere `fed2` invece dell'hash completo.",
+            ],
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Come detto prima, specificare un commit tramite l'hash non è assolutamente il modo migliore, ragion per cui Git ha i riferimenti relativi. Sono stupendi!",
+              "",
+              "Tramite i riferimenti relativi, puoi partire da un punto facile da ricordare (per esempio dal ramo `bugFix` o `HEAD`) e procedere da lì.",
+              "",
+              "Questi riferimenti sono strumenti potenti, introduciamo i più semplici:",
+              "",
+              "* Risalire di un commit alla volta con `^`",
+              "* Risalire di tot commit alla volta con `~<num>`",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Diamo un occhiata all'operatore (^) chiamato Caret o accento circonflesso. Ogni volta che lo aggiungi a un riferimento, stai dicendo a Git di cercare il genitore del commit specificato.",
+              "",
+              'Quindi, dire `main^` è equivalente a dire "il primo genitore di `main`".',
+              "",
+              "`main^^` è il nonno (antenato di seconda generazione) di `main`",
+              "",
+              "Selezioniamo il commit sopra main.",
+            ],
+            afterMarkdowns: [
+              "Colpito! Fatto. Mille volte meglio che scrivere l'hash.",
+            ],
+            command: "git checkout main^",
+            beforeCommand: "git commit",
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Puoi considerare `HEAD` come un riferimento relativo. Usiamolo un paio di volte per risalire l'albero dei commit.",
+            ],
+            afterMarkdowns: [
+              "Facile! Possiamo viaggiare in dietro nel tempo con `HEAD^`",
+            ],
+            command:
+              "git checkout C3; git checkout HEAD^; git checkout HEAD^; git checkout HEAD^",
+            beforeCommand: "git commit; git commit",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Per completare questo livello, seleziona il commit padre di `bugFix`. Questo provocherà una detached `HEAD`.",
+              "",
+              "Puoi usare l'hash se vuoi, ma prova a usare i riferimenti relativi!",
+            ],
+          },
+        },
+      ],
+    },
+
   }
 };

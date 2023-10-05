@@ -1,5 +1,5 @@
 exports.level = {
-  "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C4\",\"id\":\"master\"},\"bugFix\":{\"target\":\"C2\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\",\"C2\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C4\",\"id\":\"main\"},\"bugFix\":{\"target\":\"C2\",\"id\":\"bugFix\"}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C3\",\"C2\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}",
   "solutionCommand": "git checkout -b bugFix;git commit;git checkout main;git commit;git merge bugFix",
   "name": {
     "en_US": "Merging in Git",
@@ -8,36 +8,42 @@ exports.level = {
     "es_MX": "Haciendo merge en Git",
     "es_ES": "Haciendo merge en Git",
     "pt_BR": "Merge no Git",
-    "gl"   : "Merge en Git",
+    "gl": "Merge en Git",
     "fr_FR": "Faire des 'merge' (fusions de branches) avec Git",
     "ko": "Git에서 브랜치 합치기(Merge)",
-    "ja"　　　: "ブランチとマージ",
+    "ja": "ブランチとマージ",
     "zh_CN": "Git Merge",
     "zh_TW": "git 中的 merge",
     "ru_RU": "Слияния веток в Git",
     "uk": "Злиття гілок в Git",
     "vi": "Gộp nhánh trong Git",
     "sl_SI": "Merganje v Gitu",
-    "pl"   : "Łączenie/Scalanie w GIT (merge)"
+    "pl": "Merge w Gicie",
+    'it_IT': "Fusione in Git",
+    "ta_IN": "கிட்டில் இணைத்தல்",
+    "tr_TR": "Git'te Merge işlemleri"
   },
   "hint": {
     "en_US": "Remember to commit in the order specified (bugFix before main)",
     "de_DE": "Denk dran in der angegebenen Reihenfolge zu committen (erst bugFix, dann main)",
-    "ja"　　　: "指示された順番でコミットすること（masterの前にbugFixで）",
+    "ja":    "指示された順番でコミットすること（mainの前にbugFixで）",
     "es_AR": "Acordate de commitear en el orden especificado (bugFix antes de main)",
     "es_MX": "Acuérdate de hacer commit en el orden especificado (bugFix antes de main)",
     "es_ES": "Acuérdate de hacer commit en el orden especificado (bugFix antes de main)",
     "pt_BR": "Lembre-se de commitar na ordem especificada (bugFix antes de main)",
-    "gl"   : "Lembrate de facer commit na orde específica (bugFix antes de main)",
+    "gl":    "Lembrate de facer commit na orde específica (bugFix antes de main)",
     "fr_FR": "Pensez à faire des commits dans l'ordre indiqué (bugFix avant main)",
     "zh_CN": "要按目标窗口中指定的顺序进行提交（bugFix 先于 main）",
     "zh_TW": "記住按指定的順序 commit（bugFix 比 main 優先）",
-    "ko": "말씀드린 순서대로 커밋해주세요 (bugFix에 먼저 커밋하고 main에 커밋)",
+    "ko":    "말씀드린 순서대로 커밋해주세요 (bugFix에 먼저 커밋하고 main에 커밋)",
     "ru_RU": "Не забудь делать коммиты в правильном порядке (сначала bugFix, потом main)",
-    "uk": "Не забудь робити коміти в правильному порядку (спочатку bugFix, а вже потім main)",
-    "vi": "Nhớ là commit theo đúng thứ tự(bugFix trước main)",
+    "uk":    "Не забудь робити коміти в правильному порядку (спочатку bugFix, а вже потім main)",
+    "vi":    "Nhớ là commit theo đúng thứ tự (bugFix trước main)",
     "sl_SI": 'Zapomni si, da je potrebno commitati v pravilnem vrstnem redu (bugfix pred main)',
-    "pl"   : "Pamiętaj, aby commit-ować w określonej kolejności (bugFix przed main)"
+    "pl":    "Pamiętaj, aby commitować w określonej kolejności (bugFix przed main)",
+    "it_IT": "Ricorda di effettuare i commit nell'ordine specificato (bugFix prima di main)",
+    "ta_IN": "bugFix முன் main என்ற கொடுக்கப்பட்ட வரிசையில் கட்டலை இடுவதை கருத்தில் கொள்க",
+    "tr_TR": "Belirlenen sırada commit etmeyi unutmayın (main'den önce bugFix)"
   },
   "disabledMap": {
     "git revert": true
@@ -258,7 +264,7 @@ exports.level = {
             "markdowns": [
               "## Mergeando ramas",
               "",
-              "¡Genial! Ya sabemos cómo commitear y cómo crear ramas. Ahora tenemos que aprender algún modo de unificar el trabajo de dos ramas diferentes.  Esto nos va a permitir abrir una nueva rama de desarrollo, implementar alguna nueva funcionalidad, y después unirla de nuevo con el trabajo principal.",
+              "¡Genial! Ya sabemos cómo commitear y cómo crear ramas. Ahora tenemos que aprender algún modo de unificar el trabajo de dos ramas diferentes. Esto nos va a permitir abrir una nueva rama de desarrollo, implementar alguna nueva funcionalidad, y después unirla de nuevo con el trabajo principal.",
               "",
               "El primer método para combinarlas que vamos a explorar es `git merge`. Mergear en Git crea un commit especial que tiene dos padres diferentes. Un commit con dos padres esencialmente significa \"Quiero incluir todo el trabajo de este padre de acá y este otro padre de acá, *y* del conjunto de todos sus ancestros\"",
               "",
@@ -325,11 +331,11 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "## Mergeando ramas",
+              "## Mezclando ramas",
               "",
-              "¡Genial! Ya sabemos cómo hacer commit y cómo crear ramas. Ahora tenemos que aprender algún modo de unificar el trabajo de dos ramas diferentes. Esto nos va a permitir abrir una nueva rama de desarrollo, implementar alguna nueva funcionalidad, y después unirla de nuevo con el trabajo principal.",
+              "¡Genial! Ya sabemos cómo hacer commit y cómo crear ramas. Ahora tenemos que aprender algún modo de unificar el trabajo de dos ramas diferentes. Esto nos va a permitir abrir una nueva rama de desarrollo, implementar alguna nueva funcionalidad y después unirla de nuevo con el trabajo principal.",
               "",
-              "El primer método para combinarlas que vamos a explorar es `git merge`. Mergear en Git crea un commit especial que tiene dos padres diferentes. Un commit con dos padres esencialmente significa \"Quiero incluir todo el trabajo de este padre de acá y este otro padre de acá, *y* del conjunto de todos sus ancestros\"",
+              "El primer método para combinarlas que vamos a explorar es `git merge`. Mezclar en Git crea un commit especial que tiene dos padres diferentes. Un commit con dos padres esencialmente significa \"Quiero incluir todo el trabajo de este padre de acá y este otro padre de acá, *y* del conjunto de todos sus ancestros\"",
               "",
               "Es más simple visualizarlo, veámoslo a continuación"
             ]
@@ -339,9 +345,9 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Acá tenemos dos ramas, y cada una tiene un commit que le es único. Esto significa que ninguna de las ramas incluye \"todo el trabajo\" que hay en nuestro repositorio. Hagamos un merge para solucionar eso.",
+              "Acá tenemos dos ramas y cada una tiene un commit único. Esto significa que ninguna de las ramas incluye \"todo el trabajo\" que hay en nuestro repositorio. Hagamos una mezcla para solucionar eso.",
               "",
-              "Vamos a `merge`ar la rama `bugFix` a `main`."
+              "Vamos a `merge`(mezclar) la rama `bugFix` a `main`."
             ],
             "afterMarkdowns": [
               "¡Wooow! ¿Viste eso? Primero que nada, `main` ahora apunta a un commit que tiene dos padres. Si sigues las flechas por el árbol de commits empezando desde `main` vas a cruzarte con cada commit del repositorio hasta llegar a la raíz. Esto significa que `main` ahora contiene todo el trabajo que hay en el repositorio.",
@@ -358,7 +364,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Mergeemos `main` a `bugFix`:"
+              "Merge (mezclemos) `main` a `bugFix`:"
             ],
             "afterMarkdowns": [
               "Como `bugFix` era un ancestro de `main`, git no tuvo que hacer ningún trabajo; simplemente movió `bugFix` al mismo commit al que estaba anexado `main`.",
@@ -603,7 +609,7 @@ exports.level = {
             "markdowns": [
               "## Branches et Merges",
               "",
-                "Super ! Nous savons désormais comment faire des commits et des branches. Maintenant nous devons apprendre comment combiner ensemble les contenus de deux branches différentes. Ceci nous permettra de créer une nouvelle branche, développer une nouvelle fonctionnalité sur cette dernière, puis intégrer cette fonctionnalité en combinant le contenu de cette branche de développement à la branche d'origine (main par exemple).",
+              "Super ! Nous savons désormais comment faire des commits et des branches. Maintenant nous devons apprendre comment combiner ensemble les contenus de deux branches différentes. Ceci nous permettra de créer une nouvelle branche, développer une nouvelle fonctionnalité sur cette dernière, puis intégrer cette fonctionnalité en combinant le contenu de cette branche de développement à la branche d'origine (main par exemple).",
               "",
               "La première méthode que nous allons voir pour combiner le contenu de deux branches est `git merge`. Faire un 'merge' avec Git crée un commit spécial qui a deux parents. Un commit avec deux parents indique en susbtance \"Je veux inclure le contenu de ce parent et le contenu de cet autre parent, *et* l'ensemble de leurs parents.\"",
               "",
@@ -620,11 +626,11 @@ exports.level = {
               "Nous allons `merge` («fusionner») la branche `bugFix` dans `main`."
             ],
             "afterMarkdowns": [
-              "Youhou ! Vous avez vu ça ? Avant tout, `main` pointe donc maintenant sur un commit qui a deux parents. Si vous remontez l'enchaînement des flèches depuis `main`, vous allez passez par tous les commits jusqu'à la racine. Cela signifie que `main` contient maintenant tout le travail du dépôt.",
+              "Youhou ! Vous avez vu ça ? Pour commencer, `main` pointe maintenant sur un commit qui a deux parents. Si vous remontez l'enchaînement des flèches depuis `main`, vous allez passez par tous les commits jusqu'à la racine. Cela signifie que `main` contient maintenant tout le travail du dépôt.",
               "",
               "Par ailleurs, avez-vous remarqué les nouvelles couleurs des commits ? Pour faciliter l'apprentissage, j'ai inclus une certaine logique dans la coloration. Chaque branche a une unique couleur. Chaque commit est de la couleur de toutes les branches qui le contiennent.",
               "",
-              "Ici nous voyons que la couleur de `main` est intégrée à tous les commits, sauf ceux de `bugFix`. Réparons-cela ..."
+              "Ici nous voyons que la couleur de `main` est intégrée à tous les commits, sauf ceux de `bugFix`. Réparons cela..."
             ],
             "command": "git merge bugFix",
             "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit"
@@ -634,12 +640,12 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Faisons un merge  de `main` dans `bugFix`:"
+              "Faisons un merge  de `main` dans `bugFix` :"
             ],
             "afterMarkdowns": [
-              "Puisque `bugFix` était un ancêtre de `main`, git n'avait aucun travail à effectuer; il a simplement déplacé `bugFix` au même commit auquel `main` est attaché.",
+              "Puisque `bugFix` était un ancêtre de `main`, Git n'avait aucun travail à effectuer; il a simplement déplacé `bugFix` au même commit auquel `main` est attaché.",
               "",
-              "Maintenant tous les commits sont de la même couleur, ce qui indique que chaque branche contient tout le contenu du dépôt ! Woohoo!"
+              "Maintenant tous les commits sont de la même couleur, ce qui indique que chaque branche contient tout le contenu du dépôt ! Woohoo !"
             ],
             "command": "git checkout bugFix; git merge main",
             "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit; git merge bugFix"
@@ -658,7 +664,7 @@ exports.level = {
               "* Faites un nouveau commit",
               "* Fusionnez la branche `bugFix` dans `main` avec `git merge`",
               "",
-              "*Rappelez-vous que vous pouvez à tout moment réafficher ces indications avec \"objective\"!*"
+              "*Rappelez-vous que vous pouvez à tout moment réafficher ces indications avec \"objective\" !*"
             ]
           }
         }
@@ -674,7 +680,7 @@ exports.level = {
               "",
               "太好了! 我们已经知道如何提交以及如何使用分支了。接下来咱们看看如何将两个分支合并到一起。就是说我们新建一个分支，在其上开发某个新功能，开发完成后再合并回主线。",
               "",
-              "咱们先来看一下第一种方法 —— `git merge`。在 Git 中合并两个分支时会产生一个特殊的提交记录，它有两个父节点。翻译成自然语言相当于：“我要把这两个父节点本身及它们所有的祖先都包含进来。”",
+              "咱们先来看一下第一种方法 —— `git merge`。在 Git 中合并两个分支时会产生一个特殊的提交记录，它有两个 parent 节点。翻译成自然语言相当于：“我要把这两个 parent 节点本身及它们所有的祖先都包含进来。”",
               "",
               "通过图示更容易理解一些，咱们到下一页看一下。"
             ]
@@ -690,7 +696,7 @@ exports.level = {
             ],
             "command": "git merge bugFix",
             "afterMarkdowns": [
-              "哇哦！看见了吗？首先，`main` 现在指向了一个拥有两个父节点的提交记录。假如从 `main` 开始沿着箭头向上看，在到达起点的路上会经过所有的提交记录。这意味着 `main` 包含了对代码库的所有修改。↓↓↓",
+              "哇哦！看见了吗？首先，`main` 现在指向了一个拥有两个 parent 节点的提交记录。假如从 `main` 开始沿着箭头向上看，在到达起点的路上会经过所有的提交记录。这意味着 `main` 包含了对代码库的所有修改。↓↓↓",
               "",
               "还有，看见各个提交记录的颜色变化了吗？为了帮助学习理解，我引入了颜色搭配。每个分支都有不同的颜色，而每个提交记录的颜色是所有包含该提交记录的分支的颜色混合之后的颜色。",
               "",
@@ -1021,7 +1027,7 @@ exports.level = {
               "",
               "Cách đầu tiên để hợp nhất thành quả cần xem xét đến là lệnh `git merge`. Merge trong Git là tạo ra một commit đặc biệt mà có 2 người cha độc nhất. Một commit mà có 2 cha căn bản nghĩa là \"Tôi muốn có thành quả của ông này và ông kia nữa, *và* tất cả ông cha của họ.\"",
               "",
-              "Trực quan thì dễ hiểu hơn, sang trang tiếp theo nào"
+              "Trực quan thì dễ hiểu hơn, sang trang tiếp theo nào."
             ]
           }
         },
@@ -1038,7 +1044,7 @@ exports.level = {
               "",
               "Đồng thời, bạn thấy màu commit thay đổi chứ? Để bạn dễ học hơn, tôi đã phối hợp một số bảng màu. Mỗi nhánh có một màu duy nhất. Mỗi commit mang màu pha trộn của tất cả nhánh chứa nó.",
               "",
-              "Vì vậy, ở đây chúng ta thấy rằng màu nhánh `main` được pha trộn vào tất cả các commit, nhưng màu` bugFix` thì không. Hãy sửa nó nào ..."
+              "Vì vậy, ở đây chúng ta thấy rằng màu nhánh `main` được pha trộn vào tất cả các commit, nhưng màu `bugFix` thì không. Hãy sửa nó nào..."
             ],
             "command": "git merge bugFix",
             "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit"
@@ -1051,7 +1057,7 @@ exports.level = {
               "Hãy gộp nhánh `main` vào `bugFix` nào:"
             ],
             "afterMarkdowns": [
-              "Vì `bugFix` là bậc cha ông của `main`, git chẳng phải làm gì cả; nó đơn giản chỉ chuyển `bugFix` vào commit mà `main` đang trỏ tới.",
+              "Vì `bugFix` là bậc cha ông của `main`, Git chẳng phải làm gì cả; nó đơn giản chỉ chuyển `bugFix` vào commit mà `main` đang trỏ tới.",
               "",
               "Giờ thì tất cả commit đã có cùng màu, nghĩa là mỗi nhánh đã chứa tất cả thành quả trong kho! Ồ hố!"
             ],
@@ -1072,7 +1078,7 @@ exports.level = {
               "* Commit một lần nữa",
               "* Gộp nhánh `bugFix` vào `main` với `git merge`",
               "",
-              "*Nhớ rằng, bạn luôn luôn có thể bật lại hội thoại này với lệnh \"objective\"!*"
+              "*Nhớ rằng, bạn luôn luôn có thể bật lại hộp thoại này với lệnh \"objective\"!*"
             ]
           }
         }
@@ -1153,13 +1159,13 @@ exports.level = {
           "type": "ModalAlert",
           "options": {
             "markdowns": [
-              "## Łączenie (scalanie) Branch-y",
+              "## Łączenie gałęzi",
               "",
-              "Świetnie! Już wiemy, jak stworzyć commit-y oraz jak tworzyć branch-e. Teraz musimy się nauczyć jak połączyć pracę dwóch różnych branch-y. Stwórzmy nowy branch, wprowadzamy nową funkcjonalność, a następnie je połączymy.",
+              "Świetnie! Już wiemy, jak dodawać commity oraz jak tworzyć gałęzie (czyli branche). Teraz musimy się nauczyć, jak połączyć pracę dwóch różnych gałęzi. Stwórzmy nową gałąź, wprowadźmy nową funkcjonalność, a następnie połączmy gałęzie.",
               "",
-              "Pierwszą metodą łączenia pracy, którą zamierzamy użyć, jest `git merge`. Połączenie te tworzy w GIT specjalny commit, który ma dwóch różnych rodziców. Commit z dwojgiem rodziców zasadniczo oznacza: \"Chcę uwzględnić całą pracę tych dwóch rodziców oraz zbiory wszystkich swoich przodków\".",
+              "Pierwszą metodą scalania (łączenia) gałęzi, której zamierzamy użyć, jest `git merge` (w Polsce możesz spotkać się z takimi określeniami jak merge'owanie albo usłyszeć o merdżowaniu). Połączenie to tworzy w Git specjalny commit, który ma dwoje różnych rodziców. Commit z dwojgiem rodziców zasadniczo oznacza: \"Chcę uwzględnić całą pracę tych rodziców *oraz* wszystkich ich przodków\".",
               "",
-              "Łatwiej będzie to wizualizować, zobaczymy to w następnym widoku."
+              "Zaraz zobaczysz, jak to wygląda i łatwiej będzie ci wszystko zrozumieć."
             ]
           }
         },
@@ -1167,16 +1173,16 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Mamy tutaj dwa branch-e (gałęzie); każdy ma po jednym commit-cie, które są unikalne. Oznacza to, że żadna z branch-y nie zawiera \"całej pracy\", które jest w naszym repozytorium. Naprawmy to za pomocą funkcji marge.",
+              "Mamy tutaj dwie gałęzie. Każda z nich ma po jednym unikalnym commicie. Oznacza to, że żadna z nich nie zawiera \"całej pracy\", którą wykonaliśmy w naszym repozytorium. Naprawmy to!.",
               "",
-              "Użyjmy `merge` aby połączyć branch `bugFix` z `main`."
+              "Użyjmy `git merge`, aby połączyć branche `bugFix` oraz `main`."
             ],
             "afterMarkdowns": [
-              "Wow! Widzialiście to? Przede wszystkim \"main\" wskazuje teraz na commit, który ma dwoje rodziców. Jeśli podążasz za strzałkami w górę drzewa zatwierdzenia od `main`, trafisz na każdy commit po drodze do korzenia. Oznacza to, że `main` zawiera teraz całą pracę w repozytorium.",
+              "Łał! Widzisz to? Teraz \"main\" wskazuje na commit, który ma dwoje rodziców. Jeśli podążasz za strzałkami w górę drzewa źródłowego od `main`, trafisz na każdy commit po drodze do korzenia. Oznacza to, że `main` zawiera teraz całą pracę w repozytorium.",
               "",
-              "Czy widziałeś również, jak zmieniły się kolory zatwierdzeń? Aby Ci pomóc w nauce, dołączyłem kilka konwencji kolorów. Każdy branch ma swój własny kolor. Każdy commit staje się kolorem wynikającym z mieszania kolorów wszystkich branch-y, które commit-ujesz",
+              "Zobacz też, jak zmieniły się kolory commitów. Aby pomóc Ci w nauce, dołączyłem kilka konwencji kolorów. Każdy branch ma swój własny kolor. Kolor każdego commita to mieszanka kolorów wszystkich gałęzi, które commitujesz",
               "",
-              "Więc tutaj widzimy, że kolor branch-a `main` uczestniczy w miksowaniu wszystkich commit-ów, ale kolor branch-u `bugFix` już nie. Naprawmy to..."
+              "Tutaj widzimy, że kolor gałęzi `main` jest składową kolorów wszystkich commitów, ale kolor gałęzi `bugFix` już nie. Naprawmy to..."
             ],
             "command": "git merge bugFix",
             "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit"
@@ -1186,12 +1192,12 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Połączmy brach `main` z branch `bugFix`:"
+              "Połączmy gałąź `main` z gałęzią `bugFix`:"
             ],
             "afterMarkdowns": [
-              "Ponieważ `bugFix` był przodkiem branch-a `main`, GIT nie musiał wykonywać żadnej pracy; po prostu przeniosł branch `bugFix` do tego samego commit-a, do którego był dołączony branch `main`.",
+              "Ponieważ `bugFix` był przodkiem gałęzi `main`, git nie musiał wykonywać żadnej pracy. Po prostu przeniósł branch `bugFix` do tego samego commita, do którego dołączony był `main`.",
               "",
-              "Teraz wszystkie commit-y mają ten sam kolor, co oznacza, że każdy branch zawiera całą pracę znajdującą się w repozytorium! Super!"
+              "Teraz wszystkie commity mają ten sam kolor, co oznacza, że każda gałąź zawiera całą pracę znajdującą się w repozytorium! Super!"
             ],
             "command": "git checkout bugFix; git merge main",
             "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit; git merge bugFix"
@@ -1203,18 +1209,226 @@ exports.level = {
             "markdowns": [
               "Aby ukończyć ten poziom, wykonaj następujące czynności:",
               "",
-              "* Stwórz nowy branch o nazwie `bugFix`",
-              "* Przełącz się na branch `bugFix`, używając polecenia `git checkout bugFix`",
-              "* Zrób commit",
-              "* Wróć do branch-u `main` za pomocą polecenia `git checkout`",
-              "* Zrób ponownie commit",
-              "* Złącz branch `bugFix` z branch-em `main` używając polecenia `git merge`",
+              "* Stwórz nową gałąź o nazwie `bugFix`",
+              "* Przełącz się na gałąź `bugFix`, używając polecenia `git checkout bugFix`",
+              "* Zrób jeden commit",
+              "* Wróć do gałęzi `main` za pomocą polecenia `git checkout`",
+              "* Zrób kolejny commit",
+              "* Połącz gałąź `bugFix` z gałęzią `main`, używając polecenia `git merge`",
               "",
-              "*Pamiętaj: zawsze możesz zobaczyć tą wiadomość ponownie, wpisując \"objective\"!*"
+              "*Pamiętaj: zawsze możesz zobaczyć tę wiadomość ponownie, wpisując \"objective\"!*"
             ]
           }
         }
       ]
-    }
+    },
+    "ta_IN": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## கிளைகள் மற்றும் ஒருங்கினைத்தல் இணைத்தல்",
+              "",
+              "நன்று! நமக்கு இப்போது கமிட் மற்றும் கிளை பிறித்தில் பற்றி தெரியும். இப்போது நாம் இரண்டு வெவ்வேறு கிளைகளிலிருந்து மாற்றங்களை ஒன்றிணைக்கும் வழியை கற்றுக்கொள்ள வேண்டும். இது நம்மை கிளை பிரிக்கவும், அதில் புதிய அம்சத்தை உருவாக்கி, பின்னர் அதை மீண்டும் இணைக்கவும் உதவும்.",
+              "",
+              "நாம் முதலில் `git merge` எப்படி இணைப்பதற்கான வேலையை செய்கிறது என்பதை காண்போம்.  Gitஇல் ஒருங்கினைக்க இரண்டு கிளைகளின் மாற்றங்களை இணைத்து ஒரு சிற்ப்பு கமிட் உருவாக்க படும். அது \"நான் மாற்றத்தினை முதல் கிளேயில் இருந்தும் மற்ற சில மாற்றங்களை அடுத்த கிளையில் இருந்தும் *மேலும்* அவற்றின் மூலங்களையும் இணைத்து ஒரே தொகுப்பாக உருவாக்க விரும்புகிறைன்.\" என சொல்வதை போன்றதுபோன்றது",
+              "",
+              "காட்சிகள் மூலம் இதை எளிதாக புறிந்து கொள்ள முடியும், அடுத்த பகுதியில் அதைப் பார்ப்போம்."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "இங்கே இரண்டு கிளைகள் உள்ளன; ஒவ்வொன்றும் தனித்துவமான ஒரு மாற்றத்துடன் கமிட் கொண்டுள்ளன. இதன் பொருள் என்னவென்றால், நாம் செய்த \"மாற்றங்களின்\" முழு தொகுப்பும் களஞ்சியத்தின் இரு கிளைகளிலும் இல்லை. அதை ஒன்றிணைப்பதன் மூலம் சரிசெய்வோம்.",
+              "",
+              "`bugFix` கிளையை `main` உடன் இணைப்போம்(`merge`)."
+            ],
+            "afterMarkdowns": [
+              "ஓ! அதை பார்தீர்களா? முதலில், `main` இரண்டு பெற்றோர்களைக் கொண்ட ஒரு கமிட்டை சுட்டிக்காட்டுகிறது. `main` கமிட் மரத்திலிருந்து நீங்கள் அம்புகளைப் பின்தொடர்ந்தால், அனைத்து வழியாகவும் வேருக்கு செல்லும் வழியில் இணைவீர்கள். இதன் பொருள் என்னவென்றால், `main` இப்போது களஞ்சியத்தில் உள்ள அனைத்து மாற்றங்களையும் கொண்டுள்ளது.",
+              "",
+              "மேலும், கமிட்டுகளின் நிறங்கள் எவ்வாறு மாற்றப்பட்டன என்பதைப் பாருங்கள்? கற்றலுக்கு உதவ, நான் சில வண்ண ஒருங்கிணைப்பைச் சேர்த்துள்ளேன். ஒவ்வொரு கிளைக்கும் ஒரு தனித்துவமான நிறம் உள்ளது. ஒவ்வொரு கமிட்டும் அது உள்ள அனைத்து கிளைகளின் கலவையால் ஆன நிறமாக மாறும்.",
+              "",
+              "ஆகவே, `main` கிளையின் வண்ணம் அனைத்து கமிட்டுகளிலும் கலந்திருப்பதை இங்கே காண்கிறோம், ஆனால் `bugFix` நிறம் மட்டும் இல்லை. அதை சரிசெய்வோம்..."
+            ],
+            "command": "git merge bugFix",
+            "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "`main`-ஐ `bugFix` உடன் இணைப்போம்:"
+            ],
+            "afterMarkdowns": [
+              "`bugFix` என்பது `main`-இன் மூலக்கிளை என்பதால், கிட் எந்த வேலையும் செய்ய வேண்டியதில்லை; அது `main` இணைந்துள்ள அதே கமிட்டுடன் `bugFix`-ஐ சேர்த்துவிடுகின்றது.",
+              "",
+              "இப்போது அனைத்து கமிட்களும் ஒரே நிரத்தில் உள்ளது, அதாவது அனைத்து கிளைகளிலும் களஞ்சியத்தில் உள்ள அனைத்து மாற்றங்களும் உள்ளன! வூஹூ!"
+            ],
+            "command": "git checkout bugFix; git merge main",
+            "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit; git merge bugFix"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "இந்த நிலையை முடிக்க, பின்வரும் படிகளைச் செய்யுங்கள்:",
+              "",
+              "* `bugFix` என்ற புதிய கிளையை உருவாக்குங்கள்",
+              "* `git checkout bugFix` கொண்டு `bugFix` கிளைக்கு மாற்றி கொல்லுங்கள்",
+              "* ஒரு கமிட் செய்யுங்கள்",
+              "* மீண்டும் `main`-க்கு `git checkout` கட்டளைமூலம் மாறுங்கள்",
+              "* மீண்டும் ஒரு கமிட் செய்யுங்கள்",
+              "* இப்போது `bugFix`-ஐ `main` உடன் `git merge` இணைக்கலாம்",
+              "",
+              "*நினைவில் கொள்ளுங்கள், இந்த உரையாடலை \"குறிக்கோள்\" கொண்டு நீங்கள் மீண்டும் காணலாம்!*"
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Rami e fusione",
+              "",
+              "Ottimo! Ora sappiamo come funzionano i commit e i rami. Adesso dobbiamo trovare il modo per unire il lavoro di due rami diversi. Questo ci permetterà di creare un nuovo ramo, aggiungere una nuova funzionalità, e poi riunire il tutto.",
+              "",
+              'Il primo metodo che vediamo per unire il lavoro è `git merge` (fusione). La fusione in Git crea un commit speciale che possiede due genitori distinti. Un commit con due genitori significa "Voglio unire tutto il lavoro da questo e da quest\' altro genitore, *e anche* di tutti i loro genitori."',
+              "",
+              "È più semplice con le immagini, vediamolo nella prossima schermata.",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              'Qui abbiamo due rami; ognuno di essi ha un commit univoco. Ciò significa che nessuno dei rami contiene per intero il "lavoro" del repository. Sistemiamo le cose con una fusione.',
+              "",
+              "Ora facciamo `merge` del ramo `bugFix` nel `main`.",
+            ],
+            afterMarkdowns: [
+              "WOW! Visto? Prima di tutto, `main` ora punta a un commit con due genitori. Se ripercorri l'albero dei commit dal  `main`, potrai attraversare tutti i commit fino alla radice (root). Questo significa che `main` ora contiene tutto il lavoro del repository.",
+              "",
+              "Hai visto come è cambiato il colore del commit? Per imparare più facilmente, ho aggiunto i colori. Ogni ramo ha un colore univoco. Ogni (merge) commit ha un colore che è la combinazione dei colori dei rami che lo compongono.",
+              "",
+              "Qui vediamo che il colore del ramo `main` è la combinazione di tutti i commit , ma il colore di `bugFix` è diverso. Sistemiamolo...",
+            ],
+            command: "git merge bugFix",
+            beforeCommand:
+              "git checkout -b bugFix; git commit; git checkout main; git commit",
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: ["Fondiamo `main` in `bugFix`:"],
+            afterMarkdowns: [
+              "Visto che `bugFix` era un antenato di `main`, git non ha dovuto fare nulla di che; ha semplicemente spostato `bugFix` sullo stesso commit in cui era collegato `main`.",
+              "",
+              "Ora tutti i commit hanno lo stesso colore, il che significa che ogni ramo contiene tutto il lavoro del repository! WoWoWoW!",
+            ],
+            command: "git checkout bugFix; git merge main",
+            beforeCommand:
+              "git checkout -b bugFix; git commit; git checkout main; git commit; git merge bugFix",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Per completare questo livello, esegui i seguenti passaggi:",
+              "",
+              "* Crea un nuovo ramo di nome `bugFix`",
+              "* Seleziona il ramo `bugFix` con il comando `git checkout bugFix`",
+              "* Esegui un commit",
+              "* Ritorna al ramo `main` con `git checkout`",
+              "* Esegui un nuovo commit",
+              "* Fondi il ramo `bugFix` nel `main` con `git merge`",
+              "",
+              '*Ricorda, puoi sempre rivedere questa schermata digitando "objective"!*',
+            ],
+          },
+        },
+      ],
+    },
+
+    "tr_TR": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Branch'ler ve Merge İşlemleri",
+              "",
+              "Harika! Nasıl commit yapılacağını ve branch oluşturulacağını öğrendik. Şimdi iki farklı branch'in çalışmasını birleştirmenin (merge) bir yolunu öğrenmemiz gerekiyor. Bu, yeni bir özellik geliştirmek için bir branch'i alacak ve sonra onu geri birleştirebilmemizi sağlayacak.",
+              "",
+              "Birleştirme işlemini inceleyeceğimiz ilk yöntem `git merge`'dir. Git'te birleştirme işlemi, iki benzersiz üst öğesi olan özel bir commit oluşturur. İki ata'sı olan bir commit, temelde \"Bu kaynak kodun bu noktadaki tüm çalışmasını ve diğer noktadaki kaynak kodun tüm çalışmasını *ve* tüm bu kaynak kodlarının üstündeki kaynak kodlarını dahil etmek istiyorum.\" anlamına gelir.",
+              "",
+              "Bu işlem görsellerle daha kolay anlaşılır, bir sonraki görünümde görelim."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "İşte iki branch'imiz var; her birinin benzersiz bir commit'i var. Bu, her iki branch'in de repo'da yaptığımız \"çalışmanın\" tamamını içermediği anlamına gelir. Birleştirme (merge) ile bunu düzeltebiliriz.",
+              "",
+              "`bugFix` branch'ini `main` ile `merge` edeceğiz."
+            ],
+            "afterMarkdowns": [
+              "Vay canına! Görüyor musunuz? İlk olarak, `main` artık iki ata'sı (Parent) olan bir commit'e işaret ediyor. `main` üzerinden commit ağacındaki okları takip ederseniz, köke giden yol boyunca her commit'e ulaşırsınız. Bu, `main`'in artık repo'nun tamamındaki tüm çalışmayı içerdiği anlamına gelir.",
+              "",
+              "Ayrıca, commit'lerim renklerinin nasıl değiştiğini gördünüz mü? Öğrenmenize yardımcı olmak için bazı renk koordinasyonları ekledik. Her branch'in kendine özgü bir rengi vardır. Her commit, kendisini içeren tüm branch'lerin karışık bir kombinasyonu olan bir renge dönüşür.",
+              "",
+              "Yani burada `main` branch'inin renginin tüm commit'lere karıştığını, ancak `bugFix` renginin karışmadığını görüyoruz. Şimdi bunu düzeltelim..."
+            ],
+            "command": "git merge bugFix",
+            "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Hadi`main`'i `bugFix`'e merge'leyelim:"
+            ],
+            "afterMarkdowns": [
+              "`bugFix`, `main`'in atası olduğu için, git'in ekstra hiçbir iş yapmasına gerek kalmadı; sadece`bugFix`'i `main`'in bağlı olduğu aynı commit'e taşıdı.",
+              "",
+              "Artık tüm commit'ler aynı renk oldu, bu da her branch'in repo'daki tüm çalışmaları içerdiği anlamına geliyor! Yaşasın!"
+            ],
+            "command": "git checkout bugFix; git merge main",
+            "beforeCommand": "git checkout -b bugFix; git commit; git checkout main; git commit; git merge bugFix"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Bu level'i tamamlamak için aşağıdaki adımları yapmanız gerekiyor:",
+              "",
+              "* `bugFix` adında yeni bir branch oluşturun",
+              "* `git checkout bugFix` komutu ile `bugFix` branch'ine geçin ",
+              "* bir commit atın",
+              "* `git checkout` komutu ile `main` branch'ine geri dönün ",
+              "* başka bir commit atın",
+              "* Ardından `git merge` komutu ile `bugFix`'i `main`'e merge edin",
+              "",
+              "*Unutmayın, \"objective\" komutunu kullanılarak bu iletişim penceresini her zaman yeniden görüntüleyebilirsiniz!*"
+            ]
+          }
+        }
+      ]
+    },
   }
 };

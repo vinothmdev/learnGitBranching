@@ -1,6 +1,6 @@
 var _ = require('underscore');
 var Q = require('q');
-var marked = require('marked');
+var { marked } = require('marked');
 
 var Views = require('../views');
 var throttle = require('../util/throttle');
@@ -173,7 +173,7 @@ var DemonstrationBuilder = ContainedBase.extend({
   className: 'demonstrationBuilder box vertical',
   template: _.template($('#demonstration-builder').html()),
   events: {
-    'click div.testButton': 'testView'
+    'click .testButton': 'testView'
   },
 
   initialize: function(options) {
@@ -281,13 +281,13 @@ var MultiViewBuilder = ContainedBase.extend({
   },
 
   events: {
-    'click div.deleteButton': 'deleteOneView',
-    'click div.testButton': 'testOneView',
-    'click div.editButton': 'editOneView',
-    'click div.testEntireView': 'testEntireView',
-    'click div.addView': 'addView',
-    'click div.saveView': 'saveView',
-    'click div.cancelView': 'cancel'
+    'click .deleteButton': 'deleteOneView',
+    'click .testButton': 'testOneView',
+    'click .editButton': 'editOneView',
+    'click .testEntireView': 'testEntireView',
+    'click .addView': 'addView',
+    'click .saveView': 'saveView',
+    'click .cancelView': 'cancel'
   },
 
   initialize: function(options) {

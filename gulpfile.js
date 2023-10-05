@@ -1,5 +1,9 @@
 var { execSync } = require('child_process');
-var { writeFileSync, readdirSync, readFileSync } = require('fs');
+var {
+  writeFileSync, readdirSync, readFileSync,
+  existsSync, statSync, mkdirSync, copyFileSync,
+} = require('fs');
+var path = require('path');
 
 var glob = require('glob');
 var _ = require('underscore');
@@ -30,7 +34,7 @@ var indexFile = readFileSync('src/template.index.html').toString();
 var indexTemplate = _.template(indexFile);
 
 var compliments = [
-  'Thanks to Hongarc for the modern and amazing gulp workflow!',
+  'Thanks to Hong4rc for the modern and amazing gulp workflow!',
   'I hope you all have a great day :)'
 ];
 var compliment = (done) => {
@@ -47,6 +51,22 @@ const lintStrings = (done) => {
 
 
 var destDir = './build/';
+
+var copyRecursiveSync = (src, dest) => {
+  var exists = existsSync(src);
+  var stats = exists && statSync(src);
+  var isDirectory = exists && stats.isDirectory();
+  if (isDirectory) {
+    mkdirSync(dest);
+    readdirSync(src).forEach((childItemName) => {
+      copyRecursiveSync(
+        path.join(src, childItemName),
+        path.join(dest, childItemName));
+    });
+  } else {
+    copyFileSync(src, dest);
+  }
+};
 
 var buildIndex = function(done) {
   log('Building index...');
@@ -72,8 +92,11 @@ var buildIndex = function(done) {
   }
   log('Found hashed style file: ' + styleFile);
 
+  var buildDir = process.env.CI ? '.' : 'build';
+
   // output these filenames to our index template
   var outputIndex = indexTemplate({
+    buildDir,
     jsFile,
     styleFile,
   });
@@ -86,7 +109,13 @@ var buildIndex = function(done) {
       removeComments: true,
     });
   }
-  writeFileSync('index.html', outputIndex);
+
+  if (process.env.CI) {
+    writeFileSync('build/index.html', outputIndex);
+    copyRecursiveSync('assets', 'build/assets');
+  } else {
+    writeFileSync('index.html', outputIndex);
+  }
   done();
 };
 
@@ -157,8 +186,8 @@ var gitAdd = function(done) {
   done();
 };
 
-var gitDeployMergeMaster = function(done) {
-  execSync('git checkout gh-pages && git merge master -m "merge master"');
+var gitDeployMergeMain = function(done) {
+  execSync('git checkout gh-pages && git merge main -m "merge main"');
   done();
 };
 
@@ -166,7 +195,7 @@ var gitDeployPushOrigin = function(done) {
   execSync('git commit -am "rebuild for prod"; ' +
     'git push origin gh-pages --force && ' +
     'git branch -f trunk gh-pages && ' +
-    'git checkout master'
+    'git checkout main'
   );
   done();
 };
@@ -184,7 +213,7 @@ var deploy = series(
   clean,
   jasmine,
   jshint,
-  gitDeployMergeMaster,
+  gitDeployMergeMain,
   build,
   gitDeployPushOrigin,
   compliment

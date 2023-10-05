@@ -1,7 +1,7 @@
 var _ = require('underscore');
 var Q = require('q');
 var Backbone = require('backbone');
-var marked = require('marked');
+var { marked } = require('marked');
 
 var Main = require('../app');
 var intl = require('../intl');
@@ -140,7 +140,8 @@ var ConfirmCancelView = ResolveRejectBase.extend({
     this.deferred = options.deferred || Q.defer();
     this.JSON = {
       confirm: options.confirm || intl.str('confirm-button'),
-      cancel: options.cancel || intl.str('cancel-button')
+      cancel: options.cancel || intl.str('cancel-button'),
+      disableCancelButton: !!options.disableCancelButton,
     };
 
     this.render();
@@ -279,8 +280,18 @@ var ModalView = Backbone.View.extend({
     if (this.shown === value) { return; }
 
     if (value) {
+      Array.from(document.body.children).forEach(function(child) {
+        if (child.classList.contains('modalView')) return;
+        if (!child.hasAttribute('inert')) child.setAttribute('inert', '');
+      });
+
       this.stealKeyboard();
     } else {
+      Array.from(document.body.children).forEach(function(child) {
+        if (child.classList.contains('modalView')) return;
+        if (child.hasAttribute('inert')) child.removeAttribute('inert');
+      });
+
       this.releaseKeyboard();
     }
 
@@ -672,7 +683,7 @@ var CanvasTerminalHolder = BaseView.extend({
 
     // Set the new position/size
     this.$terminal.animate({
-      left: left + 'px',
+      right: right + 'px',
       top: top + 'px',
       height: height + 'px'
     }, this.getAnimationTime(), function () {

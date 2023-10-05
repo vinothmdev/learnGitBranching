@@ -1,15 +1,15 @@
 exports.level = {
-  "goalTreeString": "%7B%22branches%22%3A%7B%22master%22%3A%7B%22target%22%3A%22C3%22%2C%22id%22%3A%22master%22%7D%2C%22bugFix%22%3A%7B%22target%22%3A%22C2%27%22%2C%22id%22%3A%22bugFix%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%27%22%3A%7B%22parents%22%3A%5B%22C3%22%5D%2C%22id%22%3A%22C2%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22bugFix%22%2C%22id%22%3A%22HEAD%22%7D%7D",
+  "goalTreeString": "%7B%22branches%22%3A%7B%22main%22%3A%7B%22target%22%3A%22C3%22%2C%22id%22%3A%22main%22%7D%2C%22bugFix%22%3A%7B%22target%22%3A%22C2%27%22%2C%22id%22%3A%22bugFix%22%7D%7D%2C%22commits%22%3A%7B%22C0%22%3A%7B%22parents%22%3A%5B%5D%2C%22id%22%3A%22C0%22%2C%22rootCommit%22%3Atrue%7D%2C%22C1%22%3A%7B%22parents%22%3A%5B%22C0%22%5D%2C%22id%22%3A%22C1%22%7D%2C%22C2%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C2%22%7D%2C%22C3%22%3A%7B%22parents%22%3A%5B%22C1%22%5D%2C%22id%22%3A%22C3%22%7D%2C%22C2%27%22%3A%7B%22parents%22%3A%5B%22C3%22%5D%2C%22id%22%3A%22C2%27%22%7D%7D%2C%22HEAD%22%3A%7B%22target%22%3A%22bugFix%22%2C%22id%22%3A%22HEAD%22%7D%7D",
   "solutionCommand": "git checkout -b bugFix;git commit;git checkout main;git commit;git checkout bugFix;git rebase main",
   "name": {
     "en_US": "Rebase Introduction",
     "de_DE": "Einführung in Rebase",
-    "ja"   : "Rebaseの解説",
+    "ja": "Rebaseの解説",
     "es_AR": "Introducción a rebase",
     "es_MX": "Introducción a rebase",
     "es_ES": "Introducción a rebase",
     "pt_BR": "Introdução ao rebase",
-    "gl"   : "Introducción a rebase",
+    "gl": "Introducción a rebase",
     "fr_FR": "Introduction à rebase",
     "ko": "리베이스(rebase)의 기본",
     "zh_CN": "Git Rebase",
@@ -18,18 +18,20 @@ exports.level = {
     "uk": "Знайомство з rebase",
     "vi": "Giới thiệu về rebase",
     'sl_SI': 'Uvod v Rebase',
-    "pl"   : "Wprowadzenie do Rebase"
+    'it_IT': "Introduzione al rebase (ribasare)",
+    "pl": "Wprowadzenie do Rebase",
+    "tr_TR": "Rebase İşlemine Giriş"
   },
   "hint": {
     "en_US": "Make sure you commit from bugFix first",
     "de_DE": "Geh vor dem committen sicher, dass du auf bugFix arbeitest",
-    "ja"   : "初めにbugFixを指した状態でコミットする",
+    "ja": "初めにbugFixを指した状態でコミットする",
     "fr_FR": "Assurez-vous de bien faire votre commit sur bugFix en premier",
     "es_AR": "Asegurate de commitear desde bugFix primero",
     "es_MX": "Asegúrate de hacer commit desde bugFix primero",
     "es_ES": "Asegúrate de hacer commit desde bugFix primero",
     "pt_BR": "O bugFix precisa ser commitado primeiro",
-    "gl"   : "Asegurate de facer o commit dende bugFix primeiro",
+    "gl": "Asegurate de facer o commit dende bugFix primeiro",
     "ko": "bugFix 브랜치에서 먼저 커밋하세요",
     "zh_CN": "先在 bugFix 分支上进行提交",
     "zh_TW": "你要先在 bugFix branch 進行 commit",
@@ -37,7 +39,9 @@ exports.level = {
     "uk": "Впевнись, що зробив коміт в гілці bugFix",
     "vi": "Hãy chắc chắn rằng bạn commit từ bugFix trước",
     'sl_SI': 'Prepričaj se, da si najprej commital bugFix.',
-    "pl"   : "Upewnij się, że masz commit z bugFix"
+    'it_IT': "Assicurati di fare prima il commit da bugFix",
+    "pl": "Upewnij się, że masz już commit z bugFix",
+    "tr_TR": "Önce bugFix'tencommit attığınıza emin olun"
   },
   "disabledMap": {
     "git revert": true
@@ -139,7 +143,7 @@ exports.level = {
             "afterMarkdowns": [
               "Hammer! Was wir in `bugFix` gemacht haben ist jetzt oben auf `main` draufgepackt und wir haben eine schön lineare Abfolge von Commits bekommen.",
               "",
-              "Commit `C3` existiert immer noch irgendwo (deswegen ist er blaß dargestellt) und `C3'` ist die \"Kopie\" die wir auf den `main` gepackt haben.",
+              "Commit `C3` existiert immer noch irgendwo (deswegen ist er blass dargestellt) und `C3'` ist die \"Kopie\" die wir auf den `main` gepackt haben.",
               "",
               "Aber `main` ist jetzt nicht aktualisiert worden, lass uns das gerade noch nachholen ..."
             ],
@@ -199,16 +203,16 @@ exports.level = {
             "beforeMarkdowns": [
               "前回と同様の2つのブランチを考えます。仮にいまbugFixブランチをチェックアウトしているとします。（アスタリスクつきのもの）",
               "",
-              "bugFixに入ってる作業内容をそのまま直接masterブランチ上の内容に移動したいとします。こうすることで、実際には並行して開発された2つの別々のブランチ上の機能のソースを、あたかも1本のブランチ上で連続して開発されていたかのように見せることができます。",
+              "bugFixに入ってる作業内容をそのまま直接mainブランチ上の内容に移動したいとします。こうすることで、実際には並行して開発された2つの別々のブランチ上の機能のソースを、あたかも1本のブランチ上で連続して開発されていたかのように見せることができます。",
               "",
               "`git rebase`コマンドでそれをやってみましょう。"
             ],
             "afterMarkdowns": [
-              "できました！これでbugFixブランチの作業内容はmasterブランチのすぐ先に移動したので、見た目が一本になってスッキリしました。",
+              "できました！これでbugFixブランチの作業内容はmainブランチのすぐ先に移動したので、見た目が一本になってスッキリしました。",
               "",
-              "気を付けてほしいのは、C3コミットはどこかに残ってるということ（ツリーの中で半透明にしてあります）、そしてC3'は（C1との接続が切れているC3の）コピーがmasterブランチ上に作られているということです。",
+              "気を付けてほしいのは、C3コミットはどこかに残ってるということ（ツリーの中で半透明にしてあります）、そしてC3'は（C1との接続が切れているC3の）コピーがmainブランチ上に作られているということです。",
               "",
-              "一つ問題が残ってて、masterブランチがまだ最新化されていませんね。ちょっと直してみましょう。。"
+              "一つ問題が残ってて、mainブランチがまだ最新化されていませんね。ちょっと直してみましょう。。"
             ],
             "command": "git rebase main",
             "beforeCommand": "git commit; git checkout -b bugFix C1; git commit"
@@ -218,7 +222,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "masterブランチにチェックアウトしてあります。この状態からmasterブランチを`bugFix`へとリベースしてみましょう。"
+              "mainブランチにチェックアウトしてあります。この状態からmainブランチを`bugFix`へとリベースしてみましょう。"
             ],
             "afterMarkdowns": [
               "できた！`main`は`bugFix`の直前のコミットだったので、gitは単純に`main`ブランチのポインタを前に進めただけでした。"
@@ -235,8 +239,8 @@ exports.level = {
               "",
               "* `bugFix`という名前の新しいブランチをチェックアウトする",
               "* 一回だけコミット",
-              "* masterブランチに戻ってもう1回コミット",
-              "* bugFixをもう1回チェックアウトして、master上にリベース",
+              "* mainブランチに戻ってもう1回コミット",
+              "* bugFixをもう1回チェックアウトして、main上にリベース",
               "",
               "幸運を祈る！"
             ]
@@ -285,7 +289,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Ahora estamos parados sobre la rama `main`. Avancemos y rebaseémosla sobre `bugFix`..."
+              "Ahora nos encontramos sobre la rama `main`. Avancemos y rebaseémosla sobre `bugFix`..."
             ],
             "afterMarkdowns": [
               "¡Ahí está! Como `main` era un ancestro de `bugFix`, git simplemente movió la referencia de `main` hacia adelante en la historia."
@@ -599,14 +603,14 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Ici nous avons encore une fois deux branches; notez que nous sommes sur la branche bugFix (cf. l'astérisque)",
+              "Ici nous avons encore une fois deux branches ; notez que nous sommes sur la branche bugFix (cf. l'astérisque)",
               "",
               "Nous voudrions transférer notre travail de la branche 'bugFix' directement sur le travail existant dans 'main'. Ainsi on aurait l'impression que ces deux travaux ont été développés séquentiellement alors qu'en réalité ils ont été réalisés en parallèle.",
               "",
               "Faisons cela avec la commande `git rebase`."
             ],
             "afterMarkdowns": [
-              "Super! Désormais, le travail de la branche 'bugFix' est juste en haut de la branche 'main' et nous avons une belle séquence linéaire de commits.",
+              "Super ! Désormais, le travail de la branche 'bugFix' est juste en haut de la branche 'main' et nous avons une belle séquence linéaire de commits.",
               "",
               "Notez que le commit C3 existe toujours quelque part (il est en grisé sur l'arbre), et C3' est la  \"copie\" que nous avons créée sur main avec rebase.",
               "",
@@ -621,7 +625,7 @@ exports.level = {
           "options": {
             "beforeMarkdowns": [
               "Nous sommes désormais positionnés sur la branche `main`. Continuons en faisant le rebase sur `bugFix`…",
-              "Et voilà ! Puisque `main` était un ascendant de `bugFix`, git a simplement déplacé la référence de la branche `main` en avant dans le temps."
+              "Et voilà ! Puisque `main` était un ascendant de `bugFix`, Git a simplement déplacé la référence de la branche `main` en avant dans le temps."
             ],
             "afterMarkdowns": [
               "Voilà vous avez vu comment cela fonctionne",
@@ -992,9 +996,9 @@ exports.level = {
             "markdowns": [
               "## Git Rebase",
               "",
-              "Cách thứ 2 để kết hợp thành của của 2 nhánh là *rebase.* Rebase về căn bản là chọn một loạt các commit, \"sao chép\" chúng, và ném chúng sang chỗ khác.",
+              "Cách thứ 2 để kết hợp thành quả của 2 nhánh là *rebase.* Rebase về căn bản là chọn một loạt các commit, \"sao chép\" chúng, và ném chúng sang chỗ khác.",
               "",
-              "Nghe có vẻ phức tạp, lợi thế của rebase là có thể tạo ra cây lịch sử thẳng tuột. Ljch sử commit nhìn sẽ gọn gàng hơn nhiều.",
+              "Nghe có vẻ phức tạp, lợi thế của rebase là có thể tạo ra cây lịch sử thẳng tuột. Lịch sử commit nhìn sẽ gọn gàng hơn nhiều.",
               "",
               "Xem nó hoạt động thế nào nào..."
             ]
@@ -1006,9 +1010,9 @@ exports.level = {
             "beforeMarkdowns": [
               "Giờ ta lại có 2 nhánh; để ý rằng nhánh bugFix đang được chọn (thấy dấu hoa thị chứ?)",
               "",
-              "Ta muốn chuyển bugFix trực tiếp sang main. Theo cách đó thì các chức năng nhìn có vẻ được phát triển tuần tự, trong khi thực tế chúng được phát triển song song.",
+              "Ta muốn chuyển công việc từ bugFix trực tiếp sang main. Theo cách đó thì các chức năng nhìn có vẻ được phát triển tuần tự, trong khi thực tế chúng được phát triển song song.",
               "",
-              "Dùng lệnh `git rebase` để thử nào"
+              "Dùng lệnh `git rebase` để thử nào."
             ],
             "afterMarkdowns": [
               "Tuyệt vời! Giờ thành quả của nhánh bugFix nằm ngay trên main và ta có các commit nằm thẳng tuột.",
@@ -1028,7 +1032,7 @@ exports.level = {
               "Giờ thì ta đã chuyển sang nhánh `main`. Tiếp tục dán nó vào `bugFix` nào..."
             ],
             "afterMarkdowns": [
-              "Đó! Bởi vì `main` là cha ông của `bugFix`, git đơn giản chuyển tham chiếu của nhánh `main` tiến lên."
+              "Đó! Bởi vì `main` là cha ông của `bugFix`, Git đơn giản chuyển tham chiếu của nhánh `main` tiến lên."
             ],
             "command": "git rebase bugFix",
             "beforeCommand": "git commit; git checkout -b bugFix C1; git commit; git rebase main; git checkout main"
@@ -1050,7 +1054,8 @@ exports.level = {
           }
         }
       ]
-    },"sl_SI": {
+    },
+    "sl_SI": {
       "childViews": [
         {
           "type": "ModalAlert",
@@ -1125,11 +1130,11 @@ exports.level = {
             "markdowns": [
               "## Git Rebase",
               "",
-              "Drugim sposobem na łączenie naszej pracy między branch-ami jest *rebase*. Rebase zasadniczo pobiera zestaw commit-ów, \"kopiuje\" je i umieszcza w innym miejscu.",
+              "Drugim sposobem na łączenie naszej pracy z różnych gałęzi jest *rebase*. Rebase zasadniczo pobiera zestaw commitów, \"kopiuje\" je i wrzuca je gdzie indziej.",
               "",
-              "Chociaż brzmi to zagmatwane, zaletą rebase jest to, że można jej użyć do stworzenia ładnej liniowej sekwencji zatwierdzeń. Rebase sprawi, że historia commit-ów w repozytorium będzie wyglądał na dużo prostszy, ponieważ unika się commit-ów scalających (merge).",
+              "Chociaż brzmi to niejasno, zaletą rebase jest to, że można go użyć do stworzenia ładnej, liniowej sekwencji commitów. Rebase sprawi, że historia commitów w repozytorium będzie wyglądała na dużo prostszą, ponieważ nia ma wtedy commitów scalających.",
               "",
-              "Zobaczmy to w akcji..."
+              "Sprawdźmy, jak to działa..."
             ]
           }
         },
@@ -1137,18 +1142,18 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Tutaj znowu mamy dwa gałęzie (branch-e); zwróć uwagę, że branch bugFix jest aktualnie wybrany (zwróć uwagę, że ma gwiazdkę)",
+              "Tutaj znowu mamy dwie gałęzie. Zauważ, że gałąź bugFix jest aktualnie wybrana (zwróć uwagę, że ma gwiazdkę)",
               "",
-              "Chcielibyśmy przenieść nasze pracę z branch-a bugFix bezpośrednio do branch-a main. W&nbsp;ten sposób wyglądałoby to tak, jakby te dwa zadania były rozwijane sekwencyjnie, podczas gdy w rzeczywistości rozwijano je równolegle.",
+              "Chcielibyśmy przenieść naszą pracę z gałęzi bugFix bezpośrednio na gałąź main. W ten sposób wyglądałoby to tak, jakby te dwa zadania były rozwijane sekwencyjnie, podczas gdy w rzeczywistości rozwijano je równolegle.",
               "",
               "Zróbmy to za pomocą polecenia `git rebase`."
             ],
             "afterMarkdowns": [
-              "Świetnie! Teraz nasz branch bugFix znajduje się tuż nad main i mamy ładną liniową sekwencję zatwierdzeń tj. commit-ów.",
+              "Świetnie! Teraz nasz branch bugFix znajduje się tuż nad main i mamy ładną liniową sekwencję commitów.",
               "",
-              "Zauważ, że commit C3 nadal gdzieś istnieje (ma wyblakły wygląd w drzewie), a commit C3' jest \"kopią\", którą nadpisujemy na main.",
+              "Zauważ, że commit C3 nadal gdzieś istnieje (jest wyblakły w drzewie), a commit C3' jest \"kopią\", którą przenosimy na main.",
               "",
-              "Jedynym problemem jest to, że main też nie został zaktualizowany, zróbmy to teraz..."
+              "Jedynym problemem jest to, że `main` nie został jeszcze zaktualizowany. Zróbmy to teraz..."
             ],
             "command": "git rebase main",
             "beforeCommand": "git commit; git checkout -b bugFix C1; git commit"
@@ -1158,10 +1163,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Jesteśmy teraz na branch-u `main`. Przejdźmy dalej i zróbmy połączenie rebase z branch-em `bugFix`..."
+              "Znajdujemy się na gałęzi `main`. Przejdźmy dalej i zróbmy połączenie rebase z branchem `bugFix`..."
             ],
             "afterMarkdowns": [
-              "Oto jest! Ponieważ `main` był przodkiem `bugFix`, GIT po prostu przesunął odniesienie do branch-a `main` do przodu w historii."
+              "Gotowe! Ponieważ `main` był przodkiem `bugFix`, git po prostu przesunął odniesienie do `main` do przodu w historii."
             ],
             "command": "git rebase bugFix",
             "beforeCommand": "git commit; git checkout -b bugFix C1; git commit; git rebase main; git checkout main"
@@ -1173,16 +1178,151 @@ exports.level = {
             "markdowns": [
               "Aby ukończyć ten poziom, wykonaj następujące czynności:",
               "",
-              "* Przejdź do nowego utworzonego branch-u o nazwie `bugFix`",
+              "* Przejdź do nowej gałęzi o nazwie `bugFix`",
               "* Zrób commit",
-              "* Wróć do branch-a main i zrób kolejny commit",
-              "* Przejdź do bugFix oraz połącz za pomocą rebase z main",
+              "* Wróć do gałęzi `main` i zrób kolejny commit",
+              "* Przejdź do `bugFix` i połącz za pomocą rebase z `main`",
               "",
-              "Powodzenia, misja zakończona!"
+              "Powodzenia!"
             ]
           }
         }
       ]
-    }
+    },
+    "it_IT": {
+      childViews: [
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "## Git Rebase",
+              "",
+              'Il secondo modo per unire il lavoro tra rami è il *rebasing* (ribasare). Quando si ribasa vengono presi una serie di commit, vengono "copiati", e incollati da qualche parte.',
+              "",
+              "Anche se sembra un sistema complesso, il vantaggio del rebasing è che può essere usato per creare una sequenza lineare di commit. Il log / storia dei commit del repository sarebbe molto più ordinata e comprensibile se fosse consentito solo il rebasing.",
+              "",
+              "Vediamolo in azione...",
+            ],
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Anche qui abbiamo ancora due rami; prestate attenzione al fatto che il ramo selezionato è bugFix (notare l'asterisco*)",
+              "",
+              "Ora vogliamo spostare il nostro lavoro dal ramo bugFix direttamente sul ramo main. In questo modo sembrerà che i due lavori sono stati sviluppati in sequenza, quando in realtà sono stati sviluppati in parallelo.",
+              "",
+              "Vediamo il comando `git rebase` all'opera.",
+            ],
+            afterMarkdowns: [
+              "Fantastico! Ora il lavoro del ramo bugFix è sopra al main e abbiamo una sequenza lineare di commit.",
+              "",
+              'Nota che il commit C3 continua ad esistere (messo in trasparenza), e C3\' è la "copia" che abbiamo ribasato sul main.',
+              "",
+              "L'unico problema è che il main non è ancora stato aggiornato, facciamolo ora...",
+            ],
+            command: "git rebase main",
+            beforeCommand: "git commit; git checkout -b bugFix C1; git commit",
+          },
+        },
+        {
+          type: "GitDemonstrationView",
+          options: {
+            beforeMarkdowns: [
+              "Ora il ramo selezionato è il main. Procediamo e facciamo rebase su `bugFix`...",
+            ],
+            afterMarkdowns: [
+              "Ecco qua! Visto che main era un antenato di `bugFix`, git sposta semplicemente il riferimento al ramo `main` in avanti.",
+            ],
+            command: "git rebase bugFix",
+            beforeCommand:
+              "git commit; git checkout -b bugFix C1; git commit; git rebase main; git checkout main",
+          },
+        },
+        {
+          type: "ModalAlert",
+          options: {
+            markdowns: [
+              "Per completare questo livello, esegui i seguenti passaggi",
+              "",
+              "* Crea un nuovo ramo di nome `bugFix`",
+              "* Crea un commit",
+              "* Torna al main e crea un nuovo commit",
+              "* Seleziona nuovamente bugFix e fai rebase sul main",
+              "",
+              "In bocca al lupo!",
+            ],
+          },
+        },
+      ],
+    },
+    "tr_TR": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Git Rebase",
+              "",
+              "Branch'ler arasında çalışmayı birleştirmenin ikinci yolu, *rebasing* (tekrar temele almak) işlemidir. Rebasing, temelde bir dizi commit'i alır, bunları \"kopyalar\" ve başka bir yere yerleştirir.",
+              "",
+              "Bu karmaşık gibi görünse de, rebasing'in avantajı, güzel bir doğrusal commit dizisi oluşturmak için kullanılabilmesidir. Yalnızca rebasing'e izin verildiğinde, repo commit kaydı / geçmişi çok daha temiz gözükebilmektedir.",
+              "",
+              "Nasıl çalıştığını görelim..."
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "İşte yine karşımızda iki branch'imiz var; bugFix branch'inin şu an seçili olduğuna dikkat edin (yıldız işareti ile belirtilmiş).",
+              "",
+              "BugFix branch'indeki çalışmamızı doğrudan main branch'indeki çalışmanın üzerine taşımak istiyoruz. Böylece bu iki özelliğin sırayla geliştirildiği görünürken, gerçekte eşzamanlı olarak geliştirildiği anlaşılacaktır.",
+              "",
+              "Hadi bunu `git rebase` komutuyla yapalım."
+            ],
+            "afterMarkdowns": [
+              "Harika! Şimdi bugFix branch'indeki çalışmamız doğrudan main'in üstünde ve güzel bir doğrusal commit dizimiz var.",
+              "",
+              "C3 commit'inin hala bir yerde bulunduğunu (ağaçta soluk bir görünümde olduğunu) ve C3'ün main üzerine yeniden temellendiği (rebase) ve bir \"kopya\" olduğunu unutmayın.",
+              "",
+              "Tek sorun, main'in henüz güncellenmemiş olması, hadi şimdi bunu yapalım..."
+            ],
+            "command": "git rebase main",
+            "beforeCommand": "git commit; git checkout -b bugFix C1; git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Şu anda `main` branch'inde bulunuyoruz. Şimdi `bugFix` branch'ini yeniden temel alalım..."
+            ],
+            "afterMarkdowns": [
+              "İşte! main, bugFix'in atsı olduğu için, git sadece main dalının referansını tarihte ileri taşıdı."
+            ],
+            "command": "git rebase bugFix",
+            "beforeCommand": "git commit; git checkout -b bugFix C1; git commit; git rebase main; git checkout main"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Bu seviyeyi tamamlamak için aşağıdaki adımları uygulamanız gerekiyor:",
+              "",
+              "* `bugFix` isminde yeni bir branch'e geçin",
+              "* Bir commit atın",
+              "* main'e geri dönün ve bir commit daha atın",
+              "* bugFix'e geri dönün ve main'e rebase atın",
+              "",
+              "Bol Şans!"
+            ]
+          }
+        }
+      ]
+    },
   }
 };

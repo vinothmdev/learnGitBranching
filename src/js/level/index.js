@@ -58,6 +58,7 @@ var Level = Sandbox.extend({
     this.startOffCommand();
 
     this.handleOpen(options.deferred);
+    LevelActions.setIsSolvingLevel(true);
   },
 
   getIsGoalExpanded: function() {
@@ -65,6 +66,7 @@ var Level = Sandbox.extend({
   },
 
   handleOpen: function(deferred) {
+    LevelActions.setIsSolvingLevel(true);
     deferred = deferred || Q.defer();
 
     // if there is a multiview in the beginning, open that
@@ -197,10 +199,10 @@ var Level = Sandbox.extend({
   },
 
   initGoalVisualization: function() {
-    var onlyMaster = TreeCompare.onlyMasterCompared(this.level);
+    var onlyMain = TreeCompare.onlyMainCompared(this.level);
     // first we make the goal visualization holder
     this.goalCanvasHolder = new CanvasTerminalHolder({
-      text: (onlyMaster) ? intl.str('goal-only-master') : undefined,
+      text: (onlyMain) ? intl.str('goal-only-main') : undefined,
       parent: this
     });
 
@@ -221,7 +223,9 @@ var Level = Sandbox.extend({
     // repo visualization a bit to make room. This way, you could have the goal window hang out on
     // the right side of the screen and still see the repo visualization.
     this.goalVis.customEvents.on('drag', function(event, ui) {
-      if (ui.position.left > 0.5 * $(window).width()) {
+      // our left is a negative value now that we start goal windows on the
+      // right, so we have to take absolute value
+      if (Math.abs(ui.position.left) < 0.4 * $(window).width()) {
         if (!$('#goalPlaceholder').is(':visible')) {
           $('#goalPlaceholder').show();
           this.mainVis.myResize();
@@ -260,13 +264,14 @@ var Level = Sandbox.extend({
     var toIssue = this.level.solutionCommand;
     var issueFunc = function() {
       this.isShowingSolution = true;
+      this.wasResetAfterSolved = true;
       Main.getEventBaton().trigger(
         'commandSubmitted',
         toIssue
       );
       log.showLevelSolution(this.getEnglishName());
     }.bind(this);
-
+  
     var commandStr = command.get('rawStr');
     if (!this.testOptionOnString(commandStr, 'noReset')) {
       toIssue = 'reset --forSolution; ' + toIssue;
@@ -277,25 +282,30 @@ var Level = Sandbox.extend({
       return;
     }
 
-    // allow them for force the solution
-    var confirmDefer = Q.defer();
-    var dialog = intl.getDialog(require('../dialogs/confirmShowSolution'))[0];
-    var confirmView = new ConfirmCancelTerminal({
-      markdowns: dialog.options.markdowns,
-      deferred: confirmDefer
-    });
+    if(!LevelStore.isLevelSolved(this.level.id)){
+      // allow them for force the solution
+      var confirmDefer = Q.defer();
+      var dialog = intl.getDialog(require('../dialogs/confirmShowSolution'))[0];
+      var confirmView = new ConfirmCancelTerminal({
+        markdowns: dialog.options.markdowns,
+        deferred: confirmDefer
+      });
 
-    confirmDefer.promise
-    .then(issueFunc)
-    .fail(function() {
-      command.setResult("");
-    })
-    .done(function() {
-     // either way we animate, so both options can share this logic
-     setTimeout(function() {
-        command.finishWith(deferred);
-      }, confirmView.getAnimationTime());
-    });
+      confirmDefer.promise
+      .then(issueFunc)
+      .fail(function() {
+        command.setResult("");
+      })
+      .done(function() {
+      // either way we animate, so both options can share this logic
+      setTimeout(function() {
+          command.finishWith(deferred);
+        }, confirmView.getAnimationTime());
+      });
+    } else {
+      issueFunc();
+      command.finishWith(deferred);
+    }
   },
 
   toggleObjective: function() {
@@ -573,6 +583,7 @@ var Level = Sandbox.extend({
     delete this.mainVis;
     delete this.goalVis;
     delete this.goalCanvasHolder;
+    LevelActions.setIsSolvingLevel(false);
   },
 
   getInstantCommands: function() {

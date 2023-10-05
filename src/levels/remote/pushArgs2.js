@@ -1,7 +1,7 @@
 exports.level = {
-    "goalTreeString": "{\"branches\":{\"master\":{\"target\":\"C6\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\"},\"foo\":{\"target\":\"C4\",\"id\":\"foo\",\"remoteTrackingBranchID\":\"o/foo\"},\"o/master\":{\"target\":\"C4\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null},\"o/foo\":{\"target\":\"C5\",\"id\":\"o/foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C2\",\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C4\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"foo\":{\"target\":\"C5\",\"id\":\"foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C5\":{\"parents\":[\"C2\"],\"id\":\"C5\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C2\",\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}}",
+  "goalTreeString": "{\"branches\":{\"main\":{\"target\":\"C6\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\"},\"foo\":{\"target\":\"C4\",\"id\":\"foo\",\"remoteTrackingBranchID\":\"o/foo\"},\"o/main\":{\"target\":\"C4\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null},\"o/foo\":{\"target\":\"C5\",\"id\":\"o/foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C2\",\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C4\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"foo\":{\"target\":\"C5\",\"id\":\"foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C5\":{\"parents\":[\"C2\"],\"id\":\"C5\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C2\",\"C3\"],\"id\":\"C4\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}}",
   "solutionCommand": "git push origin main^:foo;git push origin foo:main",
-  "startTree": "{\"branches\":{\"master\":{\"target\":\"C6\",\"id\":\"master\",\"remoteTrackingBranchID\":\"o/master\"},\"foo\":{\"target\":\"C4\",\"id\":\"foo\",\"remoteTrackingBranchID\":\"o/foo\"},\"o/master\":{\"target\":\"C1\",\"id\":\"o/master\",\"remoteTrackingBranchID\":null},\"o/foo\":{\"target\":\"C1\",\"id\":\"o/foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C2\",\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"master\":{\"target\":\"C1\",\"id\":\"master\",\"remoteTrackingBranchID\":null},\"foo\":{\"target\":\"C1\",\"id\":\"foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"master\",\"id\":\"HEAD\"}}}",
+  "startTree": "{\"branches\":{\"main\":{\"target\":\"C6\",\"id\":\"main\",\"remoteTrackingBranchID\":\"o/main\"},\"foo\":{\"target\":\"C4\",\"id\":\"foo\",\"remoteTrackingBranchID\":\"o/foo\"},\"o/main\":{\"target\":\"C1\",\"id\":\"o/main\",\"remoteTrackingBranchID\":null},\"o/foo\":{\"target\":\"C1\",\"id\":\"o/foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"},\"C2\":{\"parents\":[\"C1\"],\"id\":\"C2\"},\"C3\":{\"parents\":[\"C1\"],\"id\":\"C3\"},\"C4\":{\"parents\":[\"C2\",\"C3\"],\"id\":\"C4\"},\"C5\":{\"parents\":[\"C2\"],\"id\":\"C5\"},\"C6\":{\"parents\":[\"C5\"],\"id\":\"C6\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"},\"originTree\":{\"branches\":{\"main\":{\"target\":\"C1\",\"id\":\"main\",\"remoteTrackingBranchID\":null},\"foo\":{\"target\":\"C1\",\"id\":\"foo\",\"remoteTrackingBranchID\":null}},\"commits\":{\"C0\":{\"parents\":[],\"id\":\"C0\",\"rootCommit\":true},\"C1\":{\"parents\":[\"C0\"],\"id\":\"C1\"}},\"HEAD\":{\"target\":\"main\",\"id\":\"HEAD\"}}}",
   "name": {
     "en_US": "Git push arguments -- Expanded!",
     "zh_CN": "Git push 参数 2",
@@ -9,15 +9,17 @@ exports.level = {
     "es_AR": "¡Más! Parámetros de git push",
     "es_ES": "¡Más! Parámetros de git push",
     "pt_BR": "Parâmetros do git push -- expandido",
-    "gl"   : "Parámetros de git push -- ampliado",
+    "gl": "Parámetros de git push -- ampliado",
     "de_DE": "Optionen für Git Push -- noch mehr!",
-    "ja"   : "Git pushの引数 -- 拡張編!",
+    "ja": "Git pushの引数 -- 拡張編!",
     "fr_FR": "Arguments de git push -- toujours plus !",
     "ru_RU": "Аргументы для push -- расширенная версия!",
-    "ko"   : "git push 인자 -- 확장판!",
-    "uk"   : "Розширені аргументи git push!",
-    "vi"   : "Tham số git push -- bản mở rộng!",
-    "sl_SI": "Git push argumenti -- Razširjeni!"
+    "ko": "git push 인자 -- 확장판!",
+    "uk": "Розширені аргументи git push!",
+    "vi": "Tham số git push -- bản mở rộng!",
+    "sl_SI": "Git push argumenti -- Razširjeni!",
+    "pl": "Argumenty git push -- Głębiej!",
+    "it_IT": "Parametri di git push - Espansione!"
   },
   "hint": {
     "en_US": "Remember you can admit defeat and type in \"show solution\" :P",
@@ -26,15 +28,17 @@ exports.level = {
     "es_AR": "Recordá que podés admitir tu derrota y tipear \"show solution\" para ver la solución :P",
     "es_ES": "Recuerda que puedes admitir tu derrota y escribir \"show solution\" para ver la solución :P",
     "pt_BR": "Lembre-se que você pode admitir que foi derrotado e digitar \"show solution\" :P",
-    "gl"   : "Lembrate que podes admitir que fuches derrotado e escribir \"show solution\" para amosala solución :P",
+    "gl": "Lembrate que podes admitir que fuches derrotado e escribir \"show solution\" para amosala solución :P",
     "de_DE": "Vergiss nicht dass du aufgeben kannst, indem du \"show solution\" eingibst :P",
-    "ja"   : "降参して解説を見るには\"show solution\"を実行できるのをお忘れなく",
+    "ja": "降参して解説を見るには\"show solution\"を実行できるのをお忘れなく",
     "fr_FR": "N'oubliez pas que vous pouvez toujours déclarer forfait avec \"show solution\" :P",
     "ru_RU": "Помните, Вы всегда можете признать своё поражение, набрав команду \"show solution\" (показать решение) :P",
-    "ko"   : "혹시 아세요? 패배를 인정하고 \"show solution\"을 입력할 수 있다는 걸요 :P",
-    "uk"   : "Пам'ятай, ти завжди можеш визнати поразку і підглянути рішення командою \"show solution\" :P",
-    "vi"   : "Nhớ rằng, bạn có thể thừa nhận thất bại và gõ \"show solution\" :P",
-    "sl_SI": "Vedno se lahko predaš in napišeš \"show solution\". :P"
+    "ko": "혹시 아세요? 패배를 인정하고 \"show solution\"을 입력할 수 있다는 걸요 :P",
+    "uk": "Пам'ятай, ти завжди можеш визнати поразку і підглянути рішення командою \"show solution\" :P",
+    "vi": "Nhớ rằng, bạn có thể thừa nhận thất bại và gõ \"show solution\" :P",
+    "sl_SI": "Vedno se lahko predaš in napišeš \"show solution\". :P",
+    "pl": "Pamiętaj, że możesz się poddać i zobaczyć gotowe rozwiązanie, wpisując \"show solution\" :P",
+    "it_IT": "Puoi sempre ammettere la tua sconfitta e digitare \"show solution\" :P"
   },
   "startDialog": {
     "en_US": {
@@ -119,7 +123,7 @@ exports.level = {
               "",
               "Vous vous demandez peut-être donc : et si nous voulions avoir une source et une destination différentes ? Et si vous voulez envoyez des commits de la branche locale `foo` dans la branche distante `bar` ?",
               "",
-              "Malheureusement ce n'est pas possible avec git... Mais non, je plaisante ! Bien sûr que c'est possible :)... git a des tonnes de flexibilité (presque trop).",
+              "Malheureusement ce n'est pas possible avec Git... Mais non, je plaisante ! Bien sûr que c'est possible :)... Git a des tonnes de flexibilité (presque trop).",
               "",
               "Voyons cela au prochain slide..."
             ]
@@ -133,7 +137,7 @@ exports.level = {
               "",
               "`git push origin <source>:<destination>`",
               "",
-              "On en parle souvent comme d'un \"refspec\". Refspec est juste un nom exotique pour un emplacement que git peut résoudre (comme la branche `foo` ou juste `HEAD~1`)",
+              "On en parle souvent comme d'un \"refspec\". Refspec est juste un nom exotique pour un emplacement que Git peut résoudre (comme la branche `foo` ou juste `HEAD~1`)",
               "",
               "Lorsque vous utilisez cette notation permettant de préciser la source et la destination indépendamment, vous pouvez produire des commandes à la fois très sophistiquées et très précises pour travailler avec les dépôts distants. Faisons une démo !"
             ]
@@ -143,10 +147,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Rappelez-vous, `source` peut être n'importe quel emplacement que git peut résoudre :"
+              "Rappelez-vous, `source` peut être n'importe quel emplacement que Git peut résoudre :"
             ],
             "afterMarkdowns": [
-              "Woahou ! C'est une commande très alambiquée mais qui a du sens : git résoud `foo^` en un emplacement, envoie tous les commits qui n'étaient pas encore présents sur le dépôt distant, et met ensuite à jour la branche de destination."
+              "Woahou ! C'est une commande très alambiquée mais qui a du sens : Git résoud `foo^` en un emplacement, envoie tous les commits qui n'étaient pas encore présents sur le dépôt distant, et met ensuite à jour la branche de destination."
             ],
             "command": "git push origin foo^:main",
             "beforeCommand": "git clone; go -b foo; git commit; git commit"
@@ -156,7 +160,7 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Que se passe-t-il quand la destination du push n'existe pas encore ? Pas de problème ! Donnez simplement un nom de branche et git va créer la branche distante pour vous."
+              "Que se passe-t-il quand la destination du push n'existe pas encore ? Pas de problème ! Donnez simplement un nom de branche et Git va créer la branche distante pour vous."
             ],
             "afterMarkdowns": [
               "Cool, c'est habile :D"
@@ -205,7 +209,7 @@ exports.level = {
               "",
               "Esto se lo suele llamar refspec con dos puntos. Refspec es simplemente un nombre cool para una ubicación que git puede entender (como la rama `foo`, o incluso `HEAD~1`)",
               "",
-              "Una vez que especificás tanto el origen como el destino independientemente, podés ponerte bastante cómodo y preciso con los comandos remotos. ¡Veamos una demo!"
+              "Una vez que especificás tanto el origen como el destino independientemente, podés ponerte bastante elegante y detallista con los comandos remotos. ¡Veamos una demo!"
             ]
           }
         },
@@ -566,7 +570,7 @@ exports.level = {
               "记住，`source` 可以是任何 Git 能识别的位置："
             ],
             "afterMarkdowns": [
-              "这是个另人困惑的命令，但是它确实是可以运行的 —— Git 将 `foo^` 解析为一个位置，上传所有未被包含到远程仓库里 `main` 分支中的提交记录。"
+              "这是个令人困惑的命令，但是它确实是可以运行的 —— Git 将 `foo^` 解析为一个位置，上传所有未被包含到远程仓库里 `main` 分支中的提交记录。"
             ],
             "command": "git push origin foo^:main",
             "beforeCommand": "git clone; go -b foo; git commit; git commit"
@@ -607,7 +611,7 @@ exports.level = {
               "",
               "Du erinnerst dich von dem vorherigen Level, dass, als wir `main` als \"Ort\" beim `git push` angegeben haben, daraus sowohl die *Quelle* als auch das *Ziel* für die Operation abgeleitet wurden.",
               "",
-              "Daher fragst du dich vielleicht -- was wenn wir möchten, dass Quelle und Ziel verschieden voneinander sind? Was wenn du Commits von einem lokalen Branch `foo` in den Branch `bar` auf einem Server schieben möchtest?",
+              "Daher fragst du dich vielleicht -- was wäre, wenn wir möchten, dass Quelle und Ziel verschieden voneinander sind? Was wäre, wenn du Commits von einem lokalen Branch `foo` in den Branch `bar` auf einem Server schieben möchtest?",
               "",
               "Tja, leider ist das in Git unmöglich .... ein Scherz! Natürlich ist das möglich. Git besitzt tonnenweise Flexibilität (eher zu viel, als zu wenig).",
               "",
@@ -662,6 +666,86 @@ exports.level = {
               "Um dieses Level zu schaffen versuche den dargestellten Zielzustand zu erreichen und vergiss nicht das Format:",
               "",
               "`<Quelle>:<Ziel>`"
+            ]
+          }
+        }
+      ]
+    },
+    "ja": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## `<place>` 引数",
+              "",
+              "前のレッスンでmainブランチをpushする際に、pushするコミットがどこから来て(source)、どこへ行くのか(destination)を`<place>`引数で指定したことを思い出してください",
+              "",
+              "では、sourceとdestinationを別々のブランチにしたい場合はどうすればよいのでしょうか？",
+              "",
+              "ローカルのfooブランチに存在するコミットをリモートのbarブランチにpushするにはどうすればよいのでしょうか？",
+              "",
+              "残念ながら、Gitでそれをしようと思っても不可能なのです... ",
+              "",
+              "というのは冗談です！もちろん可能ですし、Gitはすごく柔軟ですから！（正直過剰な程に）",
+              "",
+              "次の説明に移りましょう"
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "`<place>`引数でsourceとdestinationを指定するのはとても簡単です。次のようにコロンで連結すればよいのです！",
+              "",
+              "`git push origin <source>:<destination>`",
+              "",
+              "この書式は一般的にコロンRefspecと呼ばれています。Refspecとは、ブランチや、HEAD~1等といったGitが解決できる場所を表す名称です。",
+              "",
+              "sourceとdestinationを別々に指定すると、よりきめ細やかなブランチ操作がリモートコマンドで行うことができます。",
+              "",
+              "それでは実際にデモを見ていきましょう!"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "sourceはgitが解決できる場所であればどこでも良いことを思い出してください。"
+            ],
+            "afterMarkdowns": [
+              "うわぁ！これはかなり奇抜な見た目のコマンドです...が実は理にかなっています。",
+              "",
+              "Gitはfoo^の場所を解決し、リモートに存在していないコミットをアップロードして、destinationに指定されたmainブランチを更新しました。"
+            ],
+            "command": "git push origin foo^:main",
+            "beforeCommand": "git clone; go -b foo; git commit; git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "存在していないブランチにpushしようとするとどうなると思いますか？心配ご無用です！",
+              "",
+              "Gitは与えられた名前を利用してリモート上にブランチを作成してくれます！"
+            ],
+            "afterMarkdowns": [
+              "うん、とても良いですね。"
+            ],
+            "command": "git push origin main:newBranch",
+            "beforeCommand": "git clone; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "このレベルでは、ゴールで示されている状態になるように挑戦してください。困ったときはこの書き方を思い出してくださいね。",
+              "",
+              "`<source>:<destination>`"
             ]
           }
         }
@@ -889,9 +973,9 @@ exports.level = {
               "",
               "Có thể bạn sẽ thắng mắc -- Nếu như ta muốn nguồn và đích khác đi thì sao? Nếu như ta muốn đẩy commit từ nhánh cục bộ `foo` lên nhánh từ xa `bar` thì sao?",
               "",
-              "Chà đáng tiếc là điều này là bất khả thi tron git... đùa thôi! Tất nhiên là làm được chứ :)... git có nhiều và rất nhiều lựa chọn linh động(có lẽ là quá nhiều)",
+              "Chà đáng tiếc là điều này là bất khả thi tron Git... đùa thôi! Tất nhiên là làm được chứ :)... Git có nhiều và rất nhiều lựa chọn linh động (có lẽ là quá nhiều)",
               "",
-              "Hãy xem cách nó hoạt động ..."
+              "Hãy xem cách nó hoạt động..."
             ]
           }
         },
@@ -903,7 +987,7 @@ exports.level = {
               "",
               "`git push origin <nguồn>:<đích>`",
               "",
-              "Giá trị thực của tham số này là một refspec, \"refspec\" là một từ tự tạo, nghĩa là một vị trí được Git nhận ra (chẳng hạn như nhánh `foo` hoặc` HEAD ~ 1`).",
+              "Giá trị thực của tham số này là một refspec, \"refspec\" là một từ tự tạo, nghĩa là một vị trí Git có thể nhận ra (chẳng hạn như nhánh `foo` hoặc `HEAD ~ 1`).",
               "",
               "Một khi bạn đã chỉ định các nguồn và đích độc lập, bạn có thể thao tác với kho chứa từ xa một cách khá thú vị và chính xác, hãy xem bản demo!"
             ]
@@ -913,10 +997,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Nhớ rằng, `nguồn` là bất kỳ vị trí nào mà git hiểu:"
+              "Nhớ rằng, `nguồn` là bất kỳ vị trí nào mà Git hiểu:"
             ],
             "afterMarkdowns": [
-              "Wao! Lệnh này khá phức tạp, nhưng mà hợp lý -- git diễn giải `foo^` thành một vị trí, tải lên tất cả các commit từ đó trở về trước mà chưa có trên nhánh đích rồi cập nhật nó."
+              "Wao! Lệnh này khá phức tạp, nhưng mà hợp lý -- Git diễn giải `foo^` thành một vị trí, tải lên tất cả các commit từ đó trở về trước mà chưa có trên nhánh đích rồi cập nhật nó."
             ],
             "command": "git push origin foo^:main",
             "beforeCommand": "git clone; go -b foo; git commit; git commit"
@@ -926,10 +1010,10 @@ exports.level = {
           "type": "GitDemonstrationView",
           "options": {
             "beforeMarkdowns": [
-              "Nếu như đích đến mà bạn muốn không tồn tại thì sao? Chẳng sao cả! Đơn giản hãy gõ tên nhánh và git sẽ tạo nhánh đó trên kho chứa từ xa cho bạn."
+              "Nếu như đích đến mà bạn muốn không tồn tại thì sao? Chẳng sao cả! Đơn giản hãy gõ tên nhánh và Git sẽ tạo nhánh đó trên kho chứa từ xa cho bạn."
             ],
             "afterMarkdowns": [
-              "Tuyệt vời, thấy git thú vị không :D"
+              "Tuyệt vời, thấy Git thú vị không :D"
             ],
             "command": "git push origin main:newBranch",
             "beforeCommand": "git clone; git commit"
@@ -1016,6 +1100,146 @@ exports.level = {
           }
         }
       ]
-    }
+    },
+    "pl": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Szczegóły argumentu `<place>`",
+              "",
+              "Przypomnij sobie, że na poprzedniej lekcji określając `main` jako argument miejsca dla polecenia git push, wybraliśmy zarówno *źródło*, z którego mają pochodzić commity, jak i *cel*, do którego mają trafić.",
+              "",
+              "No i może zastanawiasz się teraz -- co by było, gdybyśmy chcieli, żeby źródło i cel były różne od siebie? Co, gdybyśmy chcieli wypchać commity z lokalnej gałęzi `foo` do zdalnej gałęzi `bar`?",
+              "",
+              "Cóż... niestety w Gicie nie da się tego zrobić... Żart! Jasne, że się da :) Git jest bardzo, bardzo elastyczny (może aż za bardzo).",
+              "",
+              "Zobaczmy, jak bardzo, na następnym slajdzie..."
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Aby określić zarówno źródło, jak i cel dla `<place>`, po prostu połącz je dwukropkiem:",
+              "",
+              "`git push origin <source>:<destination>`",
+              "",
+              "To nic innego jak refspec z dwukropkiem. Refspec to tylko wymyślny termin oznaczający lokalizację, którą Git potrafi zidentyfikować (na przykład gałąź `foo` albo po prostu `HEAD~1`).",
+              "",
+              "Kiedy już zaczniesz określać niezależnie źródła i cele, to możesz trochę zaszaleć na zdalnych repozytoriach. Zobaczmy demo!"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Pamiętaj, że `source` (źródło) to dowolna lokalizacja, którą Git zrozumie:"
+            ],
+            "afterMarkdowns": [
+              "Łaaał! Niezły odlot, ale jest w tym poleceniu jakiś sens -- Git zinterpretował `foo^` jako konkretną lokalizację, wrzucił tam wszystkie commity, jakich brakowało jeszcze w zdalnym repo, i na koniec zaktualizował cel."
+            ],
+            "command": "git push origin foo^:main",
+            "beforeCommand": "git clone; go -b foo; git commit; git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "A co, jeśli miejsce, do którego chcesz zrobić push, nie istnieje? Żaden problem! Wybierz tylko nazwę dla gałęzi, a Git stworzy ją dla ciebie w zdalnym repozytorium."
+            ],
+            "afterMarkdowns": [
+              "Pięknie! Całkiem sprytne! :D"
+            ],
+            "command": "git push origin main:newBranch",
+            "beforeCommand": "git clone; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Na tym poziomie postaraj się uzyskać drzewo takie jak na wizualizacji, i pamiętaj o formacie:",
+              "",
+              "`<źródło>:<cel>`"
+            ]
+          }
+        }
+      ]
+    },
+    "it_IT": {
+      "childViews": [
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "## Dettagli sul parametro `<place>`",
+              "",
+              "Ricorderai dalle lezioni precedenti che quando abbiamo specificato `main` come parametro place per git push, abbiamo specificato sia la *fonte* di provenienza dei commit che la *destinazione* d'arrivo.",
+              "",
+              "Potresti star pensando -- e se volessimo che la fonte e la destinazione fossero distinte? Se volessi caricare con push dei commit dal ramo locale `foo` verso il ramo remoto `bar`?",
+              "",
+              "Sfortunatamente ciò non è possibile in git... scherzetto! Ovviamente lo possiamo fare :)... git è davvero molto flessibile (forse troppo).",
+              "",
+              "Vediamo come nella prossima slide..."
+            ]
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Per specificare sia la fonte che la destinazione di `<place>`, basta unire le due tramite i due punti:",
+              "",
+              "`git push origin <source>:<destination>`",
+              "",
+              "Questo è comunemente conosciuto come colon refspec (*colon* sono i due punti). Refspec è solo un nome complicato per riferirsi ad una posizione che git può interpretare (come il ramo `foo` o anche solo `HEAD~1`).",
+              "",
+              "Potendo specificare sia fonte che destinazione in maniera indipendente, puoi sfruttare i comandi remoti in maniera molto precisa. Vediamo una demo!"
+            ]
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "Ricorda, `source` può essere una qualsiasi posizione che git può capire:"
+            ],
+            "afterMarkdowns": [
+              "Wow! Un comando bello contorto ma sensato -- git ha interpretato `foo^` come una posizione, caricato i commit che non erano presenti nel repository remoto, e poi aggiornato la destinazione."
+            ],
+            "command": "git push origin foo^:main",
+            "beforeCommand": "git clone; go -b foo; git commit; git commit"
+          }
+        },
+        {
+          "type": "GitDemonstrationView",
+          "options": {
+            "beforeMarkdowns": [
+              "E se la destinazione alla quale vuoi caricare i dati non esiste? Nessun problema! Basta specificare il nome di un ramo e git lo creerà sul remoto per te."
+            ],
+            "afterMarkdowns": [
+              "Facile così :D"
+            ],
+            "command": "git push origin main:newBranch",
+            "beforeCommand": "git clone; git commit"
+          }
+        },
+        {
+          "type": "ModalAlert",
+          "options": {
+            "markdowns": [
+              "Per questo livello, prova a raggiungere lo stato finale mostrato nella finestra obiettivo, e ricorda il formato:",
+              "",
+              "`<source>:<destination>`"
+            ]
+          }
+        }
+      ]
+    },
   }
 };

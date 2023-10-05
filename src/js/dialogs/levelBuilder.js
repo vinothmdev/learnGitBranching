@@ -79,7 +79,7 @@ exports.dialog = {
     type: 'ModalAlert',
     options: {
       markdowns: [
-        '## ¡Bienvenido al constructor de niveles!',
+        '## ¡Te damos la bienvenida al constructor de niveles!',
         '',
         'Estos son los pasos principales:',
         '',
@@ -281,7 +281,7 @@ exports.dialog = {
         '  * Định nghĩa cây mục tiêu với ```define goal```. Định nghĩa mục tiêu đồng thời cũng xác định đáp án',
         '  * Có thể định nghĩa gợi ý với ```define hint```',
         '  * Chỉnh sửa tên với ```define name```',
-        '  * Có thể định nghĩa hội thoại bắt đầu với ```edit dialog```',
+        '  * Có thể định nghĩa hộp thoại bắt đầu với ```edit dialog```',
         '  * Nhập lệnh ```finish``` xuất cấp độ của bạn dưới dạng JSON!'
       ]
     }
@@ -324,4 +324,64 @@ exports.dialog = {
       ]
     }
   }],
+    'ta_IN': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## நிலைகளை நிருவகிக்கும் கட்டமைப்பிற்க்கு வருக!',
+        '',
+        'அடிப்படை நடைமுறைகள்:',
+        '',
+        '  * முதலாவதாக ஆரம்ப சூழலை git கட்டளைகள் கொன்டுகொன்டு அமைக்கவும்.',
+        '  * ```define start``` தொடக்க செயல் முறையை வரையறுக்கவும்.',
+        '  * உகந்த தீர்வினை அடையும் git கட்டளைகளின் தொடரை உள்ளிடவும்.',
+        '  * ```define goal``` கொண்டு இலக்கினை அடையும் கிளை வரைமுரைகளை தீர்வுடன் அமைக்கவும்.',
+        '  * தேவை எனில் ```define hint``` கொண்டு உதவி குறிப்பை வரையறுக்கவும்.',
+        '  * ```define name``` கொண்டு பெயரைத் திருத்தவும்.',
+        '  * தேவை எனில் ```edit dialog``` கொண்டு ஒரு நல்ல முன்னுறையை வரையறுக்கவும்.',
+        '  * ```finish``` கொண்டு இந்த நிலையின் JSON!-ஐ அச்சிடுக.'
+      ]
+    }
+  }],
+   "it_IT": [
+    {
+      type: "ModalAlert",
+      options: {
+        markdowns: [
+          "## Benvenuto al generatore di livelli !",
+          "",
+          "Ecco i passaggi principali:",
+          "",
+          "  * Inizializza l'ambiente con i comandi git",
+          "  * Definisci l'albero di partenza con ```define start```",
+          "  * Inserisci la serie di comandi git che compongono la soluzione (ottimale)",
+          "  * Definisci l'albero finale da ottenere con ```define goal```. L'albero finale costituisce la soluzione",
+          "  * E' possibile inserire un suggerimento con ```define hint```",
+          "  * Modifica il nome con ```define name```",
+          "  * E' possibile personalizzare la finestra iniziale con ```edit dialog```",
+          "  * Inserire il comando ```finish``` per generare il livello JSON!",
+        ],
+      },
+    },
+  ],
+  'tr_TR': [{
+    type: 'ModalAlert',
+    options: {
+      markdowns: [
+        '## Level oluşturucusuna hoş geldiniz!',
+        '',
+        'İşte ana adımlar:',
+        '',
+        '  * Git komutlarıyla başlangıç ortamını ayarlayın',
+        '  * Başlangıç ağacını ```define start``` ile tanımlayın',
+        '  * (İdeal) çözümü oluşturan git komutlarını girin',
+        '  * Hedef ağacını ```define goal``` ile tanımlayın. Hedefi tanımlamak aynı zamanda çözümü tanımlar',
+        '  * İsteğe bağlı olarak ipucu ekleyin ```define hint```',
+        '  * İsmi düzenleyin ```define name```',
+        '  * İsteğe bağlı olarak hoş bir başlangıç diyalogu tanımlayın ```edit dialog```',
+        '  * Level JSON\'unuzu çıkarmak için ```finish``` komutunu girin!'
+      ]
+    }
+  }],
 };
+
